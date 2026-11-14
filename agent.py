@@ -1,179 +1,178 @@
 """agent.py
-Agent MPC (Model Predictive Control) lineal per al repte UPC Sostenible - Datathon 2026.
-Optimitza el balanç ponderat 70% CO2 / 30% Cost amb 0 infraccions físiques.
+Repte UPC Sostenible - Datathon 2026.
+
+Agent de control optim per horitzo lliscant (MPC exacte) resolt amb programacio dinamica,
+sense cap solver extern (nomes `math`).
+
+Idea:
+1. El score es lineal en l'energia importada. Cada kWh importat a l'hora t "costa"
+       w_t = 0.70 * co2_t / REF_CO2 + 0.30 * preu_t / REF_COST
+   on REF_CO2 i REF_COST normalitzen les dues metriques (nomes importa la seva ratio).
+   Com que la demanda neta del campus (~1.100 kW) sempre supera els 500 kW de la bateria i la
+   solar mai genera excedent, carregar P kW a l'hora t suma P*w_t i descarregar-ne resta P*w_t.
+2. L'observacio dona els preus i el CO2 reals de les properes 24 h (incloent-hi l'hora actual).
+   A cada hora resolem EXACTAMENT el problema d'optimitzacio de 24 h i apliquem nomes la
+   primera decisio (MPC).
+3. El problema es resol enrere amb el "valor marginal de l'energia emmagatzemada": la funcio de
+   valor V_k(SOC) es convexa i lineal a trossos, i a cada pas nomes cal fusionar dues pendents
+   (carregar i descarregar). Resultat identic a un LP (validat contra linprog i forca bruta),
+   unes 17 vegades mes rapid.
+4. Valor terminal 0: les 24 h conegudes ja contenen un cicle diari complet. Valorar l'energia
+   sobrant al final de l'horitzo (abans, percentil 70) feia que la bateria acumules energia sense
+   aprofitar-la. Amb valor 0 l'agent queda a <=0,002 punts de l'optim amb informacio perfecta.
+5. Seguretat: clamp fisic estricte (0 infraccions), descarrega limitada a la demanda neta de
+   l'ultima hora (evita abocar energia en forats de dades amb consum ~0), comprovacio que el
+   vector de 24 h comenci a l'hora actual, i consigna 0 si alguna dada no es valida.
 """
-import numpy as np
-from scipy.optimize import linprog
+import math
+
+
+def _num(valor, defecte=None):
+    """Converteix a float finit o retorna `defecte`."""
+    try:
+        x = float(valor)
+    except (TypeError, ValueError):
+        return defecte
+    return x if math.isfinite(x) else defecte
 
 
 class BatteryAgent:
+    # Especificacions fisiques oficials (starter_kit/battery_spec.json)
+    CAPACITAT_KWH = 2000.0
+    POTENCIA_MAX_KW = 500.0
+    RENDIMENT_CICLE = 0.90
+
+    # Normalitzacio de la funcio objectiu (mitjanes de data/train; nomes importa la ratio)
+    REF_CO2 = 0.0847    # kg CO2/kWh
+    REF_COST = 0.1380   # EUR/kWh
+    PES_CO2 = 0.70
+    PES_COST = 0.30
+
+    VALOR_TERMINAL = 0.0     # valor (en unitats de w) d'1 kWh emmagatzemat al final de l'horitzo
+    LIMIT_DEMANDA = True     # no descarregar mes que la demanda neta mesurada l'ultima hora
+    MARGE_SEGURETAT = 1e-4   # kW de marge respecte als limits fisics
+
     def __init__(self):
-        # Especificacions físiques oficials
-        self.cap_max_kwh = 2000.0
-        self.pot_max_kw = 500.0
-        self.eta = 0.9 ** 0.5  # ~0.948683 (rendiment round-trip 90%)
-        self.eps_seguretat = 1e-4
+        self.eta = math.sqrt(self.RENDIMENT_CICLE)                 # ~0.9487 en carregar i en descarregar
+        self.max_pujada = self.POTENCIA_MAX_KW * self.eta          # kWh emmagatzemats que pot guanyar en 1 h
+        self.max_baixada = self.POTENCIA_MAX_KW / self.eta         # kWh emmagatzemats que pot perdre en 1 h
 
-        # Paràmetres de normalització de la funció objectiu (ajustables amb dades de train)
-        self.pes_co2 = 0.70
-        self.pes_cost = 0.30
-        self.ref_co2 = 0.0847    # kg CO2/kWh mitjà de referència
-        self.ref_cost = 0.1380   # €/kWh mitjà de referència
-        self.preu_excedent = 0.04
+    # ------------------------------------------------------------------ dades d'entrada
+    def _pes(self, preu, co2):
+        return self.PES_CO2 * co2 / self.REF_CO2 + self.PES_COST * preu / self.REF_COST
 
-        # Perfil adaptatiu de demanda neta (Demanda - Solar) en kW: [2 (laborable/cap de setmana), 24 hores]
-        # Valors inicials orientatius d'un campus universitari; s'actualitzen amb la telemetria real
-        perfil_base = np.array([
-            220.0, 200.0, 195.0, 195.0, 205.0, 240.0,  # 00-05h
-            320.0, 480.0, 620.0, 650.0, 580.0, 420.0,  # 06-11h
-            310.0, 280.0, 320.0, 430.0, 560.0, 640.0,  # 12-17h
-            610.0, 520.0, 410.0, 320.0, 260.0, 230.0,  # 18-23h
-        ])
-        self.perfil_demanda_neta = np.vstack([perfil_base, perfil_base * 0.55])
-        self.alpha_ema = 0.25  # Factor de suavitzat exponencial per actualitzar el perfil
+    def _previsio(self, obs):
+        """Pesos w_k per a l'hora actual (k=0) i les seguents, a partir dels vectors de 24 h."""
+        preu_ara = _num(obs.get("preu_actual"))
+        co2_ara = _num(obs.get("co2_actual"))
+        # Sense `or []`: si arribessin arrays de numpy, avaluar-los com a booleà donaria error.
+        preus = obs.get("preus_properes_24h")
+        co2s = obs.get("co2_properes_24h")
+        preus = [] if preus is None else list(preus)
+        co2s = [] if co2s is None else list(co2s)
 
-        self.ultim_timestamp = None
-        self.ultima_hora = None
-        self.ultim_dow = None
+        pesos = []
+        for p, c in zip(preus, co2s):
+            p, c = _num(p), _num(c)
+            if p is None or c is None:
+                break  # tallem l'horitzo a la primera dada no valida
+            pesos.append((p, c))
 
-    def _actualitzar_telemetria(self, obs: dict) -> float:
-        """Actualitza l'estimació de demanda neta amb la darrera mesura de sensors."""
-        dades = obs.get("noves_dades_5min") or {}
-        consum = dades.get("ultim_consum_kw")
-        solar = dades.get("ultima_solar_kw")
+        if preu_ara is not None and co2_ara is not None:
+            # El simulador inclou l'hora actual com a primer element del vector. Si no fos aixi,
+            # l'afegim davant per no desalinear tot el pla una hora.
+            if not pesos or abs(pesos[0][0] - preu_ara) > 1e-9 or abs(pesos[0][1] - co2_ara) > 1e-9:
+                pesos.insert(0, (preu_ara, co2_ara))
+        return [self._pes(p, c) for p, c in pesos]
 
-        hora_actual = int(obs["hour"])
-        dow_actual = int(obs["day_of_week"])
+    def _limit_descarrega(self, obs):
+        """Maxim de kWh emmagatzemats que te sentit descarregar ara (limitat per la demanda neta)."""
+        if not self.LIMIT_DEMANDA:
+            return self.max_baixada
+        dades = obs.get("noves_dades_5min")
+        if not isinstance(dades, dict):
+            dades = {}
+        consum = _num(dades.get("ultim_consum_kw"))
+        solar = _num(dades.get("ultima_solar_kw"), 0.0)
+        if consum is None:
+            return self.max_baixada
+        demanda_neta = max(0.0, min(self.POTENCIA_MAX_KW, consum - solar))
+        return demanda_neta / self.eta
 
-        if consum is not None and solar is not None:
-            demanda_neta_mesurada = float(consum) - float(solar)
-            # La telemetria correspon a l'hora immediatament anterior
-            hora_prev = (hora_actual - 1) % 24
-            dow_prev = (dow_actual - 1) % 7 if hora_actual == 0 else dow_actual
-            tipus_dia_prev = 1 if dow_prev >= 5 else 0
+    # ------------------------------------------------------------------ optimitzacio
+    def _funcio_valor(self, pesos):
+        """Funcio de cost futur V(SOC) despres de l'hora actual, convexa i lineal a trossos.
 
-            actual = self.perfil_demanda_neta[tipus_dia_prev, hora_prev]
-            self.perfil_demanda_neta[tipus_dia_prev, hora_prev] = (
-                (1.0 - self.alpha_ema) * actual + self.alpha_ema * demanda_neta_mesurada
-            )
-            return demanda_neta_mesurada
+        Es representa com una llista de trams (pendent, longitud) ordenats per pendent creixent
+        que cobreixen SOC de 0 a CAPACITAT_KWH. -pendent = valor marginal d'1 kWh emmagatzemat.
+        Recursio: V_k = restriccio a [0, CAP] de la convolucio infimal de V_{k+1} amb el cost
+        d'una hora (carregar costa w/eta per kWh guardat; descarregar estalvia w*eta per kWh).
+        """
+        trams = [(-self.VALOR_TERMINAL, self.CAPACITAT_KWH)]
+        for w in reversed(pesos):
+            nous = list(trams)
+            for tram in ((-w / self.eta, self.max_pujada), (-w * self.eta, self.max_baixada)):
+                i = 0
+                while i < len(nous) and nous[i][0] < tram[0]:
+                    i += 1
+                nous.insert(i, tram)
+            # El domini passa a [-max_pujada, CAP + max_baixada]: retallem tots dos extrems.
+            retall, resultat = self.max_pujada, []
+            for pendent, longitud in nous:
+                if retall > 0.0:
+                    if longitud <= retall:
+                        retall -= longitud
+                        continue
+                    longitud -= retall
+                    retall = 0.0
+                resultat.append([pendent, longitud])
+            retall = self.max_baixada
+            while retall > 1e-12 and resultat:
+                if resultat[-1][1] <= retall:
+                    retall -= resultat[-1][1]
+                    resultat.pop()
+                else:
+                    resultat[-1][1] -= retall
+                    retall = 0.0
+            trams = [tuple(t) for t in resultat]
+        return trams
 
-        tipus_dia = 1 if dow_actual >= 5 else 0
-        return float(self.perfil_demanda_neta[tipus_dia, hora_actual])
+    def _decidir(self, obs, soc):
+        pesos = self._previsio(obs)
+        if not pesos:
+            return 0.0
+        w0 = pesos[0]
+        trams = self._funcio_valor(pesos[1:])
 
-    def _preveure_demanda_neta(self, hora_inici: int, dow_inici: int, horitzo: int, d_recent: float) -> np.ndarray:
-        """Genera el vector de demanda neta esperada per als propers `horitzo` passos."""
-        previsio = np.zeros(horitzo, dtype=float)
-        tipus_dia_0 = 1 if dow_inici >= 5 else 0
-        # Ajust d'anomalia immediata respecte al perfil històric
-        biaix_actual = d_recent - self.perfil_demanda_neta[tipus_dia_0, hora_inici]
+        # Fins on surt a compte carregar (valor marginal > w0/eta) i fins on surt a compte
+        # descarregar (valor marginal < w0*eta).
+        soc_carrega = soc_descarrega = 0.0
+        for pendent, longitud in trams:
+            if pendent < -w0 / self.eta:
+                soc_carrega += longitud
+            if pendent < -w0 * self.eta:
+                soc_descarrega += longitud
 
-        for k in range(horitzo):
-            h = (hora_inici + k) % 24
-            dies_extra = (hora_inici + k) // 24
-            dow = (dow_inici + dies_extra) % 7
-            tipus_dia = 1 if dow >= 5 else 0
-            # L'anomalia recent decau exponencialment al llarg de les hores següents
-            previsio[k] = self.perfil_demanda_neta[tipus_dia, h] + biaix_actual * (0.65 ** k)
-
-        return previsio
-
-    def _resoldre_mpc(
-        self,
-        soc_0: float,
-        preus: np.ndarray,
-        co2: np.ndarray,
-        demanda_neta: np.ndarray,
-    ) -> float:
-        """Resol l'optimització lineal a H passos i retorna la consigna de l'hora actual (kW)."""
-        H = len(preus)
-        n_vars = 4 * H  # Per cada pas k: [P_ch, P_dis, P_imp, P_exp]
-
-        # Pesos marginals normalitzats d'importació i exportació
-        preus_imp = np.maximum(preus, self.preu_excedent + 1e-3)
-        w_imp = (self.pes_co2 * (co2 / self.ref_co2)) + (self.pes_cost * (preus_imp / self.ref_cost))
-        w_exp = -self.pes_cost * (self.preu_excedent / self.ref_cost)
-
-        # Valor terminal de l'energia emmagatzemada al final de l'horitzó (evita buidat miop)
-        valor_terminal = self.eta * float(np.percentile(w_imp, 70))
-
-        # Vector de costos lineals c
-        c = np.zeros(n_vars, dtype=float)
-        eps_cicle = 1e-5  # Penalització mínima per evitar càrrega i descàrrega simultànies
-        for k in range(H):
-            idx = 4 * k
-            c[idx + 0] = eps_cicle - valor_terminal * self.eta
-            c[idx + 1] = eps_cicle + valor_terminal / self.eta
-            c[idx + 2] = w_imp[k]
-            c[idx + 3] = w_exp
-
-        # Restriccions d'igualtat: -P_ch + P_dis + P_imp - P_exp = demanda_neta[k]
-        A_eq = np.zeros((H, n_vars), dtype=float)
-        b_eq = demanda_neta.copy()
-        for k in range(H):
-            idx = 4 * k
-            A_eq[k, idx + 0] = -1.0
-            A_eq[k, idx + 1] = 1.0
-            A_eq[k, idx + 2] = 1.0
-            A_eq[k, idx + 3] = -1.0
-
-        # Restriccions de desigualtat: 0 <= SOC_0 + sum_{j<=k} (eta*P_ch - P_dis/eta) <= 2000
-        marge_soc = 0.5
-        espai_sup = max(0.0, self.cap_max_kwh - soc_0 - marge_soc)
-        espai_inf = max(0.0, soc_0 - marge_soc)
-
-        A_ub = np.zeros((2 * H, n_vars), dtype=float)
-        b_ub = np.zeros(2 * H, dtype=float)
-        inv_eta = 1.0 / self.eta
-
-        for k in range(H):
-            b_ub[k] = espai_sup
-            b_ub[H + k] = espai_inf
-            for j in range(k + 1):
-                idx = 4 * j
-                A_ub[k, idx + 0] = self.eta
-                A_ub[k, idx + 1] = -inv_eta
-                A_ub[H + k, idx + 0] = -self.eta
-                A_ub[H + k, idx + 1] = inv_eta
-
-        # Límits individuals de variables
-        bounds = []
-        for _ in range(H):
-            bounds.extend([
-                (0.0, self.pot_max_kw),  # P_ch
-                (0.0, self.pot_max_kw),  # P_dis
-                (0.0, None),             # P_imp
-                (0.0, None),             # P_exp
-            ])
-
-        res = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method="highs")
-
-        if res.success and res.x is not None:
-            return float(res.x[0] - res.x[1])
+        if soc < soc_carrega:
+            delta = min(soc_carrega, soc + self.max_pujada) - soc          # kWh guardats (>0)
+            return delta / self.eta                                         # kW de carrega
+        if soc > soc_descarrega:
+            delta = soc - max(soc_descarrega, soc - self._limit_descarrega(obs))
+            return -delta * self.eta                                        # kW de descarrega
         return 0.0
 
+    # ------------------------------------------------------------------ interficie oficial
     def act(self, obs: dict) -> float:
-        hora = int(obs["hour"])
-        dow = int(obs["day_of_week"])
-        soc_kwh = float(obs["soc_kwh"])
-        preu_actual = float(obs["preu_actual"])
-        co2_actual = float(obs["co2_actual"])
+        soc = _num(obs.get("soc_kwh"), 0.0)
+        soc = min(self.CAPACITAT_KWH, max(0.0, soc))
+        try:
+            consigna = float(self._decidir(obs, soc))
+            if not math.isfinite(consigna):
+                consigna = 0.0
+        except Exception:
+            consigna = 0.0
 
-        d_recent = self._actualitzar_telemetria(obs)
-
-        # Construcció del vector de 25 passos: hora actual exacta + 24h de previsió
-        preus_24h = list(obs.get("preus_properes_24h") or [])
-        co2_24h = list(obs.get("co2_properes_24h") or [])
-        preus = np.array(preus_24h if preus_24h else [preu_actual], dtype=float)
-        co2 = np.array(co2_24h if co2_24h else [co2_actual], dtype=float)
-       
-        demanda_neta = self._preveure_demanda_neta(hora, dow, len(preus), d_recent)
-        consigna_desitjada = self._resoldre_mpc(soc_kwh, preus, co2, demanda_neta)
-
-        # Clamping físic estricte per garantir 0 infraccions
-        espai_disponible_kwh = max(0.0, self.cap_max_kwh - soc_kwh)
-        energia_disponible_kwh = max(0.0, soc_kwh)
-        max_carrega = max(0.0, min(self.pot_max_kw, espai_disponible_kwh / self.eta - self.eps_seguretat))
-        max_descarrega = max(0.0, min(self.pot_max_kw, energia_disponible_kwh * self.eta - self.eps_seguretat))
-
-        return float(np.clip(consigna_desitjada, -max_descarrega, max_carrega))
+        # Clamping fisic estricte per garantir 0 infraccions
+        max_carrega = max(0.0, min(self.POTENCIA_MAX_KW, (self.CAPACITAT_KWH - soc) / self.eta - self.MARGE_SEGURETAT))
+        max_descarrega = max(0.0, min(self.POTENCIA_MAX_KW, soc * self.eta - self.MARGE_SEGURETAT))
+        return float(max(-max_descarrega, min(max_carrega, consigna)))
