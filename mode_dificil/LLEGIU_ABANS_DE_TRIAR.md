@@ -8,7 +8,7 @@ compta al public; la que queda al final, no. Amb el MATEIX agent, canviar nomes 
 |---|---|---|---|
 | v5 | guarda ~50% per a l'endema | 23,44 | 21,9 / 19,4 / 20,6 |
 | v6_final_bloc | buida | 20,15 | 17,3 / 23,2 / 20,1 |
-| v7_public | plena | (previsio ~25,5-26,5) | 25,0 / 14,5 / 19,7 |
+| v7_public | plena | 27,36 (2n al public) | 25,0 / 14,5 / 19,7 |
 
 El lider (27,98) es exactament el que surt de sumar aquest efecte a un agent normal (23,4 + ~4,6).
 
