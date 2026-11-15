@@ -1,0 +1,410 @@
+{
+  "warning": "All published-train results for official ZIPs are IN-SAMPLE; not unbiased generalization estimates. No server access.",
+  "exact_packages": {
+    "baseline": {
+      "zip_sha256": "fe1371e28b44bffc932e670d30dec437b20ea71d76fec08c441aed0e056039d3",
+      "all_published_train": {
+        "score": 19.68,
+        "co2_estalviat_pct": 18.69,
+        "cost_estalviat_pct": 21.98,
+        "co2_estalviat_kg": 87482.4,
+        "cost_estalviat_eur": 168467.19,
+        "co2_participant_kg": 380547.2,
+        "cost_participant_eur": 598020.41,
+        "co2_baseline_kg": 468029.5,
+        "cost_baseline_eur": 766487.6,
+        "infraccions": 0,
+        "hores": 5993,
+        "temps_s": 14.196343283999965,
+        "soc_final_kwh": 5908.3187814052835,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "price",
+          "co2"
+        ],
+        "mercat_analog_carregat": false
+      },
+      "historical_selected_weeks": {
+        "score": 17.58,
+        "co2_estalviat_pct": 16.5,
+        "cost_estalviat_pct": 20.1,
+        "co2_estalviat_kg": 24365.4,
+        "cost_estalviat_eur": 45485.47,
+        "co2_participant_kg": 123292.6,
+        "cost_participant_eur": 180804.75,
+        "co2_baseline_kg": 147658.0,
+        "cost_baseline_eur": 226290.21,
+        "infraccions": 0,
+        "hores": 1680,
+        "temps_s": 3.7999417400000084,
+        "soc_final_kwh": 3640.463408342867,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "price",
+          "co2"
+        ],
+        "mercat_analog_carregat": false
+      }
+    },
+    "prototype": {
+      "zip_sha256": "14abcbcdcec877eabf41d9978b0c49371ac8a42f1516ece9f113c60c33bacec2",
+      "all_published_train": {
+        "score": 20.01,
+        "co2_estalviat_pct": 18.93,
+        "cost_estalviat_pct": 22.53,
+        "co2_estalviat_kg": 88586.5,
+        "cost_estalviat_eur": 172714.8,
+        "co2_participant_kg": 379443.0,
+        "cost_participant_eur": 593772.8,
+        "co2_baseline_kg": 468029.5,
+        "cost_baseline_eur": 766487.6,
+        "infraccions": 0,
+        "hores": 5993,
+        "temps_s": 8.587074226000027,
+        "soc_final_kwh": 4472.441558581999,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6"
+        ],
+        "mercat_analog_carregat": true
+      },
+      "historical_selected_weeks": {
+        "score": 17.82,
+        "co2_estalviat_pct": 16.8,
+        "cost_estalviat_pct": 20.19,
+        "co2_estalviat_kg": 24801.2,
+        "cost_estalviat_eur": 45696.17,
+        "co2_participant_kg": 122856.8,
+        "cost_participant_eur": 180594.04,
+        "co2_baseline_kg": 147658.0,
+        "cost_baseline_eur": 226290.21,
+        "infraccions": 0,
+        "hores": 1680,
+        "temps_s": 2.6254842430000167,
+        "soc_final_kwh": 4201.408875371677,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6"
+        ],
+        "mercat_analog_carregat": true
+      }
+    }
+  },
+  "reproduction": {
+    "baseline": {
+      "calibration": {
+        "score": 14.42,
+        "co2_estalviat_pct": 12.65,
+        "cost_estalviat_pct": 18.55,
+        "co2_estalviat_kg": 8168.7,
+        "cost_estalviat_eur": 19364.3,
+        "co2_participant_kg": 56415.3,
+        "cost_participant_eur": 85023.58,
+        "co2_baseline_kg": 64584.0,
+        "cost_baseline_eur": 104387.88,
+        "infraccions": 0,
+        "hores": 840,
+        "temps_s": 1.2322005460000014,
+        "soc_final_kwh": 5121.242638598235,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "price",
+          "co2"
+        ],
+        "mercat_analog_carregat": false
+      },
+      "confirmation": {
+        "score": 17.03,
+        "co2_estalviat_pct": 16.09,
+        "cost_estalviat_pct": 19.22,
+        "co2_estalviat_kg": 13364.4,
+        "cost_estalviat_eur": 23427.88,
+        "co2_participant_kg": 69709.6,
+        "cost_participant_eur": 98474.46,
+        "co2_baseline_kg": 83074.0,
+        "cost_baseline_eur": 121902.34,
+        "infraccions": 0,
+        "hores": 840,
+        "temps_s": 1.0837535959999514,
+        "soc_final_kwh": 3643.998984924779,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "price",
+          "co2"
+        ],
+        "mercat_analog_carregat": false
+      },
+      "all": {
+        "score": 16.06,
+        "co2_estalviat_pct": 14.79,
+        "cost_estalviat_pct": 19.01,
+        "co2_estalviat_kg": 21838.8,
+        "cost_estalviat_eur": 43014.83,
+        "co2_participant_kg": 125819.2,
+        "cost_participant_eur": 183275.38,
+        "co2_baseline_kg": 147658.0,
+        "cost_baseline_eur": 226290.21,
+        "infraccions": 0,
+        "hores": 1680,
+        "temps_s": 2.204739129000018,
+        "soc_final_kwh": 3643.998984924779,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "price",
+          "co2"
+        ],
+        "mercat_analog_carregat": false
+      }
+    },
+    "prototype": {
+      "calibration": {
+        "score": 15.83,
+        "co2_estalviat_pct": 13.87,
+        "cost_estalviat_pct": 20.42,
+        "co2_estalviat_kg": 8956.1,
+        "cost_estalviat_eur": 21313.67,
+        "co2_participant_kg": 55627.9,
+        "cost_participant_eur": 83074.21,
+        "co2_baseline_kg": 64584.0,
+        "cost_baseline_eur": 104387.88,
+        "infraccions": 0,
+        "hores": 840,
+        "temps_s": 1.205311120000033,
+        "soc_final_kwh": 5075.342748159877,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6"
+        ],
+        "mercat_analog_carregat": true
+      },
+      "confirmation": {
+        "score": 18.17,
+        "co2_estalviat_pct": 17.5,
+        "cost_estalviat_pct": 19.74,
+        "co2_estalviat_kg": 14534.7,
+        "cost_estalviat_eur": 24063.21,
+        "co2_participant_kg": 68539.3,
+        "cost_participant_eur": 97839.13,
+        "co2_baseline_kg": 83074.0,
+        "cost_baseline_eur": 121902.34,
+        "infraccions": 0,
+        "hores": 840,
+        "temps_s": 1.3229533580000066,
+        "soc_final_kwh": 4173.815307455184,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6"
+        ],
+        "mercat_analog_carregat": true
+      },
+      "all": {
+        "score": 17.31,
+        "co2_estalviat_pct": 16.14,
+        "cost_estalviat_pct": 20.05,
+        "co2_estalviat_kg": 23836.1,
+        "cost_estalviat_eur": 45360.53,
+        "co2_participant_kg": 123821.9,
+        "cost_participant_eur": 180929.69,
+        "co2_baseline_kg": 147658.0,
+        "cost_baseline_eur": 226290.21,
+        "infraccions": 0,
+        "hores": 1680,
+        "temps_s": 2.400651039999957,
+        "soc_final_kwh": 4173.815307455184,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6"
+        ],
+        "mercat_analog_carregat": true
+      }
+    }
+  },
+  "in_sample_forecast_metrics": {
+    "baseline": {
+      "net": {
+        "h0-0": {
+          "n": 5993,
+          "rmse": 63.78964358850473,
+          "mae": 39.98464864639919,
+          "bias": 1.4908187784702622
+        },
+        "h1-2": {
+          "n": 11947,
+          "rmse": 67.78878697108581,
+          "mae": 43.24803794404857,
+          "bias": 0.5726597914230821
+        },
+        "h3-11": {
+          "n": 53118,
+          "rmse": 68.64201541850261,
+          "mae": 45.95821707716286,
+          "bias": -0.45463301550747404
+        },
+        "h12-23": {
+          "n": 69186,
+          "rmse": 70.10978869957009,
+          "mae": 47.99418854905346,
+          "bias": 0.35783358592919423
+        }
+      },
+      "price": {
+        "h3-11": {
+          "n": 53118,
+          "rmse": 0.010162099016019041,
+          "mae": 0.007611104449521655,
+          "bias": 0.00012068230909328185
+        },
+        "h12-23": {
+          "n": 69186,
+          "rmse": 0.01131137999167567,
+          "mae": 0.008499423148862376,
+          "bias": 0.00015379572483263296
+        },
+        "h3-23": {
+          "n": 122304,
+          "rmse": 0.010827230678031192,
+          "mae": 0.008113616366814524,
+          "bias": 0.00013941419669583578
+        }
+      },
+      "co2": {
+        "h3-11": {
+          "n": 53118,
+          "rmse": 0.007865156378744203,
+          "mae": 0.005856673653406702,
+          "bias": -3.5974816534134914e-05
+        },
+        "h12-23": {
+          "n": 69186,
+          "rmse": 0.009587815470181697,
+          "mae": 0.007121491186663376,
+          "bias": -3.501544970127758e-07
+        },
+        "h3-23": {
+          "n": 122304,
+          "rmse": 0.008880788952076179,
+          "mae": 0.006572166735038507,
+          "bias": -1.582234508839044e-05
+        }
+      },
+      "negative_weight_forecast_hours": 0,
+      "min_weight_forecast": 0.031737666089791616
+    },
+    "prototype": {
+      "net": {
+        "h0-0": {
+          "n": 5993,
+          "rmse": 122.14746596993733,
+          "mae": 73.38646983580257,
+          "bias": -5.9776387413166905
+        },
+        "h1-2": {
+          "n": 11947,
+          "rmse": 155.64486041191674,
+          "mae": 93.75808412568584,
+          "bias": 3.196164669170652
+        },
+        "h3-11": {
+          "n": 53118,
+          "rmse": 191.56014419072744,
+          "mae": 117.12275023393735,
+          "bias": 4.409819665117863
+        },
+        "h12-23": {
+          "n": 69186,
+          "rmse": 206.38990957875632,
+          "mae": 124.74525683748327,
+          "bias": -3.264009846120766
+        }
+      },
+      "price": {
+        "h3-11": {
+          "n": 53118,
+          "rmse": 0.010361816887864502,
+          "mae": 0.005951683958829009,
+          "bias": 0.00028929751519901896
+        },
+        "h12-23": {
+          "n": 69186,
+          "rmse": 0.013361166292398105,
+          "mae": 0.008814460729654333,
+          "bias": 0.00030511218687836295
+        },
+        "h3-23": {
+          "n": 122304,
+          "rmse": 0.012149814577194395,
+          "mae": 0.007571124644876243,
+          "bias": 0.000298243697456403
+        }
+      },
+      "co2": {
+        "h3-11": {
+          "n": 53118,
+          "rmse": 0.005945000214865225,
+          "mae": 0.0036678324922544193,
+          "bias": 7.651429167367266e-06
+        },
+        "h12-23": {
+          "n": 69186,
+          "rmse": 0.007662401031562729,
+          "mae": 0.005182871699202113,
+          "bias": -9.952674027637871e-06
+        },
+        "h3-23": {
+          "n": 122304,
+          "rmse": 0.006968702414134085,
+          "mae": 0.00452487316608261,
+          "bias": -2.307014412970439e-06
+        }
+      },
+      "negative_weight_forecast_hours": 0,
+      "min_weight_forecast": 0.03164981172816252
+    }
+  },
+  "analog_self_neighbor_diagnostic": {
+    "source_origins": 5694,
+    "self_in_top4_fraction": 1.0,
+    "mean_self_weight": 0.6670045013556696,
+    "max_self_feature_distance_sq": 1.0514672309280446e-28
+  }
+}

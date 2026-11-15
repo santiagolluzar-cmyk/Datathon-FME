@@ -1,0 +1,9 @@
+{
+  "hybrid16_guarded": {
+    "market_analog_weight": 0.75,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "short_market_weight_cap": 0.5
+  }
+}

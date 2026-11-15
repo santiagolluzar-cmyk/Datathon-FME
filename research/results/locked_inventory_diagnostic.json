@@ -1,0 +1,50 @@
+{
+  "baseline_clean": {
+    "carry": {
+      "label": "Ex-post mean-market inventory accounting; not official score",
+      "net_stored_energy_change_kwh": 739.9503418804702,
+      "grid_equivalent_kwh": 701.9785307287697,
+      "score_adjustment": 0.07292912313374907,
+      "inventory_neutral_score": 24.870415450264733
+    },
+    "reset": {
+      "label": "Ex-post mean-market inventory accounting; not official score",
+      "net_stored_energy_change_kwh": -4523.574643415939,
+      "grid_equivalent_kwh": -4768.266346326122,
+      "score_adjustment": -0.49537908680015086,
+      "inventory_neutral_score": 24.721920245824975
+    }
+  },
+  "prototype_clean": {
+    "carry": {
+      "label": "Ex-post mean-market inventory accounting; not official score",
+      "net_stored_energy_change_kwh": 56.82222579827885,
+      "grid_equivalent_kwh": 53.90629657288217,
+      "score_adjustment": 0.0056003691969991444,
+      "inventory_neutral_score": 25.219443302464953
+    },
+    "reset": {
+      "label": "Ex-post mean-market inventory accounting; not official score",
+      "net_stored_energy_change_kwh": -6378.685919890025,
+      "grid_equivalent_kwh": -6723.725328566272,
+      "score_adjustment": -0.6985333182418658,
+      "inventory_neutral_score": 25.10852561548954
+    }
+  },
+  "selected": {
+    "carry": {
+      "label": "Ex-post mean-market inventory accounting; not official score",
+      "net_stored_energy_change_kwh": 695.8039289186709,
+      "grid_equivalent_kwh": 660.09756608307,
+      "score_adjustment": 0.06857807549638684,
+      "inventory_neutral_score": 25.208983139669893
+    },
+    "reset": {
+      "label": "Ex-post mean-market inventory accounting; not official score",
+      "net_stored_energy_change_kwh": -5956.41693429194,
+      "grid_equivalent_kwh": -6278.6147353200095,
+      "score_adjustment": -0.6522904150161897,
+      "inventory_neutral_score": 25.094302211050444
+    }
+  }
+}

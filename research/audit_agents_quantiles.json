@@ -1,0 +1,66 @@
+{
+  "full_in_sample": {
+    "all_uncertain_hours": {
+      "n": 4504,
+      "coverage_q071_to_q929": 0.8816607460035524,
+      "below_q071": 0.0663854351687389,
+      "above_q929": 0.051953818827708706,
+      "mean_width_kw": 217.49144149303038,
+      "quantile_crossing_fraction_before_sort": 0.34058614564831263,
+      "median_mae_kw": 62.848048880734424,
+      "net_model_mae_kw": 82.99452927747164
+    },
+    "daylight": {
+      "n": 2936,
+      "coverage_q071_to_q929": 0.8763623978201635,
+      "below_q071": 0.069141689373297,
+      "above_q929": 0.05449591280653951,
+      "mean_width_kw": 294.17613826394575,
+      "quantile_crossing_fraction_before_sort": 0.29189373297002724,
+      "median_mae_kw": 86.64775851471651,
+      "net_model_mae_kw": 112.79837383088666
+    },
+    "dark": {
+      "n": 1568,
+      "coverage_q071_to_q929": 0.8915816326530612,
+      "below_q071": 0.061224489795918366,
+      "above_q929": 0.047193877551020405,
+      "mean_width_kw": 73.90325927402047,
+      "quantile_crossing_fraction_before_sort": 0.4317602040816326,
+      "median_mae_kw": 18.28430686200267,
+      "net_model_mae_kw": 27.18835095551598
+    }
+  },
+  "historical_oof": {
+    "all_uncertain_hours": {
+      "n": 1270,
+      "coverage_q071_to_q929": 0.789763779527559,
+      "below_q071": 0.1078740157480315,
+      "above_q929": 0.10236220472440945,
+      "mean_width_kw": 219.74822706113906,
+      "quantile_crossing_fraction_before_sort": 0.3251968503937008,
+      "median_mae_kw": 73.02477678530099,
+      "net_model_mae_kw": 91.55833187803246
+    },
+    "daylight": {
+      "n": 813,
+      "coverage_q071_to_q929": 0.7724477244772447,
+      "below_q071": 0.11685116851168512,
+      "above_q929": 0.11070110701107011,
+      "mean_width_kw": 294.53146823156817,
+      "quantile_crossing_fraction_before_sort": 0.24600246002460024,
+      "median_mae_kw": 99.44241122859434,
+      "net_model_mae_kw": 123.8809838395903
+    },
+    "dark": {
+      "n": 457,
+      "coverage_q071_to_q929": 0.8205689277899344,
+      "below_q071": 0.09190371991247265,
+      "above_q929": 0.087527352297593,
+      "mean_width_kw": 86.70933193737785,
+      "quantile_crossing_fraction_before_sort": 0.4660831509846827,
+      "median_mae_kw": 26.02797853060187,
+      "net_model_mae_kw": 34.05654622213195
+    }
+  }
+}

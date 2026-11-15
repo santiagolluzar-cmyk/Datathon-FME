@@ -1,0 +1,128 @@
+[
+  {
+    "name": "residual_regression_31_100",
+    "iterations": 77,
+    "cal_rmse": 217.2667897257237,
+    "confirmation_rmse": 223.89897429000268,
+    "confirmation_h0_rmse": 133.21690197999317
+  },
+  {
+    "name": "residual_regression_15_500",
+    "iterations": 79,
+    "cal_rmse": 217.30428447733158,
+    "confirmation_rmse": 226.98530988436124,
+    "confirmation_h0_rmse": 137.76428014774555
+  },
+  {
+    "name": "residual_regression_63_100",
+    "iterations": 75,
+    "cal_rmse": 219.17030328364228,
+    "confirmation_rmse": 224.40866935178792,
+    "confirmation_h0_rmse": 133.46142449102354
+  },
+  {
+    "name": "residual_regression_l1_31_100",
+    "iterations": 211,
+    "cal_rmse": 217.53249274318014,
+    "confirmation_rmse": 225.9849961830228,
+    "confirmation_h0_rmse": 137.89946713293153
+  },
+  {
+    "name": "residual_regression_l1_15_500",
+    "iterations": 272,
+    "cal_rmse": 216.97375248344565,
+    "confirmation_rmse": 225.99683713267535,
+    "confirmation_h0_rmse": 142.49252639511766
+  },
+  {
+    "name": "residual_regression_l1_63_100",
+    "iterations": 163,
+    "cal_rmse": 216.68974366249338,
+    "confirmation_rmse": 225.13788609039202,
+    "confirmation_h0_rmse": 133.00544209944246
+  },
+  {
+    "name": "residual_huber_31_100",
+    "iterations": 600,
+    "cal_rmse": 261.9348304870089,
+    "confirmation_rmse": 265.4762854413619,
+    "confirmation_h0_rmse": 126.07995486031423
+  },
+  {
+    "name": "residual_huber_15_500",
+    "iterations": 600,
+    "cal_rmse": 262.4090226960631,
+    "confirmation_rmse": 265.8412636588134,
+    "confirmation_h0_rmse": 126.28353388496737
+  },
+  {
+    "name": "residual_huber_63_100",
+    "iterations": 600,
+    "cal_rmse": 261.5853981850016,
+    "confirmation_rmse": 265.1591897665358,
+    "confirmation_h0_rmse": 125.96460737679418
+  },
+  {
+    "name": "direct_regression_31_100",
+    "iterations": 193,
+    "cal_rmse": 217.9584406444254,
+    "confirmation_rmse": 231.77598469268185,
+    "confirmation_h0_rmse": 218.02927831969424
+  },
+  {
+    "name": "direct_regression_15_500",
+    "iterations": 193,
+    "cal_rmse": 217.26001791961627,
+    "confirmation_rmse": 228.04451675245804,
+    "confirmation_h0_rmse": 213.7955728123074
+  },
+  {
+    "name": "direct_regression_63_100",
+    "iterations": 194,
+    "cal_rmse": 218.96477977776,
+    "confirmation_rmse": 237.44979120206256,
+    "confirmation_h0_rmse": 224.3709754760768
+  },
+  {
+    "name": "direct_regression_l1_31_100",
+    "iterations": 230,
+    "cal_rmse": 217.27948254110638,
+    "confirmation_rmse": 234.87383603454168,
+    "confirmation_h0_rmse": 229.1186295337791
+  },
+  {
+    "name": "direct_regression_l1_15_500",
+    "iterations": 292,
+    "cal_rmse": 215.62077297729348,
+    "confirmation_rmse": 234.4701013123225,
+    "confirmation_h0_rmse": 224.86007166202114
+  },
+  {
+    "name": "direct_regression_l1_63_100",
+    "iterations": 160,
+    "cal_rmse": 220.84511217989206,
+    "confirmation_rmse": 237.03297118447264,
+    "confirmation_h0_rmse": 230.4775652836077
+  },
+  {
+    "name": "direct_huber_31_100",
+    "iterations": 600,
+    "cal_rmse": 493.56389426260563,
+    "confirmation_rmse": 495.7440481540656,
+    "confirmation_h0_rmse": 486.6290605198326
+  },
+  {
+    "name": "direct_huber_15_500",
+    "iterations": 600,
+    "cal_rmse": 493.86217334059694,
+    "confirmation_rmse": 496.3737860084704,
+    "confirmation_h0_rmse": 487.25108678366536
+  },
+  {
+    "name": "direct_huber_63_100",
+    "iterations": 600,
+    "cal_rmse": 493.5015496884544,
+    "confirmation_rmse": 495.3402837806358,
+    "confirmation_h0_rmse": 486.22884059187777
+  }
+]

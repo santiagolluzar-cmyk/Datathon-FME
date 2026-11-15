@@ -1,0 +1,11 @@
+{
+  "sources": {
+    "research/selection.json": "70def50cfb715cbd24872c8b2349b2b36e90ab0c8ee125557cdecd1f08d6f7f9",
+    "research/results/locked_final.json": "0fc6741dabaa4e91f4acfc2ce218d3de83de73d3839a7cc01520c28dfa71dc43",
+    "research/results/delivery_verification.json": "a769d1064dc8814e553bf4388cf0f88d9da7b633b7d26c241a0f0303220de3b0",
+    "research/results/guarded.json": "bd4dfce5345f9d1cb082d8bc77dd7cc8653cb310c4d2ce25d28ba395e0f171db"
+  },
+  "output": "lliuraments/informe_Riviera_Maya_Boys.pdf",
+  "pdf_sha256": "48505306eebd536cc5103d487f25e87858013e2f514e1cf887850666620910ab",
+  "pages": 7
+}

@@ -1,0 +1,173 @@
+{
+  "method": "End-to-end CampusBatteryEnv hard-mode observations; single SOC trajectory across time gaps; agent history resets on timestamp gaps; no retuning",
+  "validation_weeks": [
+    "2025-09-15/2025-09-21",
+    "2025-10-13/2025-10-19",
+    "2025-12-15/2025-12-21",
+    "2026-01-12/2026-01-18",
+    "2026-02-09/2026-02-15",
+    "2026-03-16/2026-03-22",
+    "2026-04-13/2026-04-19",
+    "2026-05-18/2026-05-24",
+    "2026-06-08/2026-06-14",
+    "2026-07-13/2026-07-19"
+  ],
+  "results": {
+    "calibration": {
+      "baseline": {
+        "score": 14.42,
+        "co2_estalviat_pct": 12.65,
+        "cost_estalviat_pct": 18.55,
+        "co2_estalviat_kg": 8168.7,
+        "cost_estalviat_eur": 19364.3,
+        "co2_participant_kg": 56415.3,
+        "cost_participant_eur": 85023.58,
+        "co2_baseline_kg": 64584.0,
+        "cost_baseline_eur": 104387.88,
+        "infraccions": 0,
+        "hores": 840,
+        "temps_s": 1.8004990000001726,
+        "soc_final_kwh": 5121.242638598235,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "price",
+          "co2"
+        ],
+        "mercat_analog_carregat": false
+      },
+      "candidate": {
+        "score": 15.83,
+        "co2_estalviat_pct": 13.87,
+        "cost_estalviat_pct": 20.42,
+        "co2_estalviat_kg": 8956.1,
+        "cost_estalviat_eur": 21313.67,
+        "co2_participant_kg": 55627.9,
+        "cost_participant_eur": 83074.21,
+        "co2_baseline_kg": 64584.0,
+        "cost_baseline_eur": 104387.88,
+        "infraccions": 0,
+        "hores": 840,
+        "temps_s": 1.6756123999998636,
+        "soc_final_kwh": 5075.342748159877,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6"
+        ],
+        "mercat_analog_carregat": true
+      },
+      "gain": 1.4100000000000001
+    },
+    "confirmation": {
+      "baseline": {
+        "score": 17.03,
+        "co2_estalviat_pct": 16.09,
+        "cost_estalviat_pct": 19.22,
+        "co2_estalviat_kg": 13364.4,
+        "cost_estalviat_eur": 23427.88,
+        "co2_participant_kg": 69709.6,
+        "cost_participant_eur": 98474.46,
+        "co2_baseline_kg": 83074.0,
+        "cost_baseline_eur": 121902.34,
+        "infraccions": 0,
+        "hores": 840,
+        "temps_s": 1.6139200999998593,
+        "soc_final_kwh": 3643.998984924779,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "price",
+          "co2"
+        ],
+        "mercat_analog_carregat": false
+      },
+      "candidate": {
+        "score": 18.17,
+        "co2_estalviat_pct": 17.5,
+        "cost_estalviat_pct": 19.74,
+        "co2_estalviat_kg": 14534.7,
+        "cost_estalviat_eur": 24063.21,
+        "co2_participant_kg": 68539.3,
+        "cost_participant_eur": 97839.13,
+        "co2_baseline_kg": 83074.0,
+        "cost_baseline_eur": 121902.34,
+        "infraccions": 0,
+        "hores": 840,
+        "temps_s": 1.6207741000000624,
+        "soc_final_kwh": 4173.815307455184,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6"
+        ],
+        "mercat_analog_carregat": true
+      },
+      "gain": 1.1400000000000006
+    },
+    "all": {
+      "baseline": {
+        "score": 16.06,
+        "co2_estalviat_pct": 14.79,
+        "cost_estalviat_pct": 19.01,
+        "co2_estalviat_kg": 21838.8,
+        "cost_estalviat_eur": 43014.83,
+        "co2_participant_kg": 125819.2,
+        "cost_participant_eur": 183275.38,
+        "co2_baseline_kg": 147658.0,
+        "cost_baseline_eur": 226290.21,
+        "infraccions": 0,
+        "hores": 1680,
+        "temps_s": 3.2591471999999158,
+        "soc_final_kwh": 3643.998984924779,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "price",
+          "co2"
+        ],
+        "mercat_analog_carregat": false
+      },
+      "candidate": {
+        "score": 17.31,
+        "co2_estalviat_pct": 16.14,
+        "cost_estalviat_pct": 20.05,
+        "co2_estalviat_kg": 23836.1,
+        "cost_estalviat_eur": 45360.53,
+        "co2_participant_kg": 123821.9,
+        "cost_participant_eur": 180929.69,
+        "co2_baseline_kg": 147658.0,
+        "cost_baseline_eur": 226290.21,
+        "infraccions": 0,
+        "hores": 1680,
+        "temps_s": 3.2856107000000065,
+        "soc_final_kwh": 4173.815307455184,
+        "errors_planificacio": 0,
+        "models_carregats": [
+          "net",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6"
+        ],
+        "mercat_analog_carregat": true
+      },
+      "gain": 1.25
+    }
+  }
+}

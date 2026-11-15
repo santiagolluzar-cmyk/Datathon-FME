@@ -1,18 +1,6 @@
-"""agent.py — Repte UPC Sostenible, MODE DIFICIL (bateria 6.000 kWh / ±1.500 kW, solar x12, mercat a 3 h).
-
-Estrategia (resum):
-1. PREVISIO del mercat (+3..+24 h): heuristica robusta (0,5*ahir + 0,5*perfil mes/tipus de dia/hora)
-   corregida per un LightGBM entrenat sobre el seu residu (nivell d'avui vs ahir, hores conegudes, sol...).
-2. PREVISIO de la demanda neta (consum - solar x12) per a les properes 24 h amb un LightGBM
-   (darrera hora mesurada, irradiancia/index de claredat, perfil, calendari de festius i vacances).
-   Nit (0-5 h): el comptador del campus queda congelat -> la demanda d'aquestes hores es coneguda exactament.
-3. DECISIO: optimitzador exacte per horitzo lliscant de 24 h (programacio dinamica sobre funcions
-   convexes lineals a trossos). La demanda neta entra com a ESCENARIS (quantils de l'error de previsio):
-   el cost esperat penalitza naturalment descarregar mes del que el campus consumira (energia abocada)
-   i premia carregar amb l'excedent solar gratuit.
-4. Pesos del score: w = 0,7*CO2/REF_CO2 + 0,3*preu/REF_COST (ratio de les linies base del mode dificil).
-5. Seguretat: clamp fisic amb cap_max_kwh/power_max_kw (0 infraccions); si falta qualsevol model o dada,
-   l'agent degrada a previsions heuristiques en lloc de fallar.
+"""Control del mode dificil: mercat per trajectories historiques semblants,
+demanda residual i quantils condicionals, amb MPC convex exacte de 24 hores.
+Nomes utilitza les dades publicades de train i les observacions rebudes.
 """
 import json
 import math
@@ -386,33 +374,91 @@ def decide(V1, w0, nets0, soc, cap, pmax):
 
 
 # ----------------------------------------------------------------------------------------- agent
+
+def market_features(xm):
+    x=np.asarray(xm,dtype=float)
+    if x.ndim==3:
+        x=x[:,0]
+    elif x.ndim==2 and x.shape[0]==24:
+        x=x[0:1]
+    month=x[:,4]
+    return np.column_stack([x[:,8]/.04,x[:,9]/.04,x[:,10]/.04,
+                            x[:,11]/.04,x[:,12]/.04,x[:,13]/.04,
+                            (x[:,10]-x[:,8])/.015,(x[:,13]-x[:,11])/.015,
+                            x[:,20]/.04,x[:,21]/.04,x[:,18]/.06,x[:,19]/.06,
+                            np.sin(month*2*np.pi/12)*.7,np.cos(month*2*np.pi/12)*.7,
+                            (x[:,2]>=5)*.5])
+
+
+class MarketAnalog:
+    def __init__(self,path,k=4):
+        with np.load(path,allow_pickle=False) as z:
+            self.library={key:z[key] for key in z.files}
+        self.k=int(k)
+        self.groups={hour:np.flatnonzero(self.library['hour']==hour) for hour in range(24)}
+
+    def predict(self,xm):
+        """Input market feature24x44 matrix; output future24 price/CO2 arrays."""
+        xm=np.asarray(xm,dtype=float)
+        row=xm[0]
+        x=market_features(xm)[0]
+        lib=self.library
+        x=np.where(np.isfinite(x),x,lib['median'])
+        pool=self.groups[int(row[5])]
+        if not len(pool):
+            raise ValueError('No market analogs for origin hour')
+        d=np.sum((lib['x'][pool]-x)**2,axis=1)
+        k=min(self.k,len(pool))
+        picked=np.argpartition(d,k-1)[:k]
+        neighbors=pool[picked]
+        weights=1/(.2+d[picked])
+        weights/=weights.sum()
+        forecasts=[]
+        for key,start in [('delta_price',8),('delta_co2',11)]:
+            known=row[start:start+3]
+            finite=np.flatnonzero(np.isfinite(known))
+            if not len(finite):
+                raise ValueError('Current market observation is absent')
+            j=int(finite[-1])
+            delta=lib[key][neighbors]
+            forecast=known[j]+np.sum(weights[:,None]*(delta-delta[:,j,None]),axis=0)
+            forecast[finite]=known[finite]
+            if key=='delta_co2':
+                forecast=np.maximum(forecast,0.)
+            forecasts.append(forecast)
+        return forecasts
+
+
 class BatteryAgent:
     CAP_DEFECTE = 6000.0
     PMAX_DEFECTE = 1500.0
-    RATIO_CO2_COST = 0.6345   # CO2_base/Cost_base del mode dificil (kg/EUR), deduida del leaderboard public
-    RES_SCALE = 2.0           # amplada dels escenaris de demanda (validada fora de mostra)
+    RATIO_CO2_COST = 0.6345
+    RES_SCALE = 2.0
 
     def __init__(self):
         self.prior = json.loads((DIR / 'prior.json').read_text(encoding='utf-8'))
         self.prior['_cache'] = {}
         self.qtab = {tuple(int(x) for x in k.split('_')): v for k, v in self.prior['qtab'].items()}
-        self.rk = float(self.prior['rk_train'])
-        self.rc = self.RATIO_CO2_COST * self.rk
         self.models = {}
         if lgb is not None:
-            for name in ('net', 'price', 'co2'):
+            for name in ['net'] + [f'q{j}' for j in range(7)]:
+                filename = 'model_net.txt' if name == 'net' else f'net_{name}.txt'
                 try:
-                    self.models[name] = lgb.Booster(model_str=(DIR / f'model_{name}.txt').read_text(encoding='utf-8'))
+                    self.models[name] = lgb.Booster(model_str=(DIR / filename).read_text(encoding='utf-8'))
                 except Exception:
                     pass
+        try:
+            self.market = MarketAnalog(DIR / 'analog_library.npz', k=4)
+        except Exception:
+            self.market = None
         self.hist = History(self.prior)
 
     def _predict(self, name, X, fallback):
-        m = self.models.get(name)
-        if m is None:
+        model = self.models.get(name)
+        if model is None:
             return fallback
         try:
-            y = np.asarray(m.predict(X, num_threads=1), dtype=float)
+            y = np.asarray(model.predict(X, num_threads=1), dtype=float)
             return np.where(np.isfinite(y), y, fallback)
         except Exception:
             return fallback
@@ -420,23 +466,33 @@ class BatteryAgent:
     def _plan(self, obs, soc, cap, pmax):
         self.hist.update(obs)
         net_rows, mkt_rows, night, load_l1 = features(self.hist)
-        Xn = np.array(net_rows, dtype=float)
-        Xm = np.array(mkt_rows, dtype=float)
-        bp, bc = Xm[:, 27], Xm[:, 28]
-        prices = bp + self._predict('price', Xm, np.zeros(H))
-        co2s = bc + self._predict('co2', Xm, np.zeros(H))
+        Xn = np.asarray(net_rows, dtype=float)
+        Xm = np.asarray(mkt_rows, dtype=float)
+        prices, co2s = Xm[:, 27].copy(), Xm[:, 28].copy()
+        if self.market is not None:
+            try:
+                prices, co2s = self.market.predict(Xm)
+            except Exception:
+                pass
         for j, (p, c) in enumerate(self.hist.known[:H]):
             prices[j], co2s[j] = p, c
-        ws = [0.7 * c / self.rc + 0.3 * p / self.rk for p, c in zip(prices, co2s)]
-        fallback_net = np.array([r[6] - r[7] for r in net_rows])  # perfil consum - perfil solar
-        npred = self._predict('net', Xn, fallback_net)
+        # Nonnegative marginal costs preserve the convex optimizer's assumptions.
+        ws = np.maximum(0.7 * co2s / self.RATIO_CO2_COST + 0.3 * prices, 0.0).tolist()
+        base = np.where(np.isfinite(Xn[:, 25]), Xn[:, 25], Xn[:, 6])
+        base -= np.where(np.isfinite(Xn[:, 23]), Xn[:, 23], Xn[:, 7])
+        npred = base + self._predict('net', Xn, np.zeros(H))
         netss = []
         for h in range(H):
-            if night[h] and not math.isnan(load_l1):
-                netss.append([load_l1])  # comptador congelat a la nit: demanda coneguda
+            if night[h] and math.isfinite(load_l1):
+                netss.append([load_l1])
             else:
-                q = self.qtab[(h, 1 if net_rows[h][8] > 50 else 0)]
+                q = self.qtab[(h, int(Xn[h, 8] > 50))]
                 netss.append(sorted(npred[h] + self.RES_SCALE * x for x in q))
+        # Conditional current-hour quantiles replace a fixed error-width assumption.
+        if not (night[0] and math.isfinite(load_l1)) and all(f'q{j}' in self.models for j in range(7)):
+            scenarios = [float(base[0] + self._predict(f'q{j}', Xn[:1], np.zeros(1))[0]) for j in range(7)]
+            if all(math.isfinite(x) for x in scenarios):
+                netss[0] = sorted(scenarios)
         V1 = backward(ws[1:], netss[1:], cap, pmax)
         return decide(V1, ws[0], netss[0], soc, cap, pmax)
 
@@ -453,7 +509,6 @@ class BatteryAgent:
                 p = 0.0
         except Exception:
             p = 0.0
-        eta = math.sqrt(0.9)
-        max_c = max(0.0, min(pmax, (cap - soc) / eta - 1e-4))
-        max_d = max(0.0, min(pmax, soc * eta - 1e-4))
+        max_c = max(0.0, min(pmax, (cap - soc) / ETA - 1e-4))
+        max_d = max(0.0, min(pmax, soc * ETA - 1e-4))
         return float(max(-max_d, min(max_c, p)))

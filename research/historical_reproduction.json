@@ -1,0 +1,1623 @@
+{
+  "calibration": {
+    "baseline": {
+      "score": 14.41882631790645,
+      "score_unclipped": 14.41882631790645,
+      "co2_saved_pct": 12.648182040867464,
+      "cost_saved_pct": 18.550329630997425,
+      "co2_baseline_kg": 64584.03268872925,
+      "co2_participant_kg": 56415.32666492542,
+      "cost_baseline_eur": 104387.87742766664,
+      "cost_participant_eur": 85023.58207003292,
+      "co2_saved_kg": 8168.706023803825,
+      "cost_saved_eur": 19364.295357633717,
+      "violations": 0,
+      "co2_estalviat_pct": 12.648182040867464,
+      "cost_estalviat_pct": 18.550329630997425,
+      "infraccions": 0,
+      "label": "oof_baseline",
+      "hours": 840,
+      "start": "2025-09-15 00:00:00",
+      "end": "2026-06-14 23:00:00",
+      "periods": [
+        {
+          "block": 0,
+          "start": "2025-09-15 00:00:00",
+          "end": "2025-09-21 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 15.73602147863252,
+          "score_unclipped": 15.73602147863252,
+          "co2_saved_pct": 14.474991442629392,
+          "cost_saved_pct": 18.678424895973148,
+          "co2_baseline_kg": 18289.40971027446,
+          "co2_participant_kg": 15642.019219804803,
+          "cost_baseline_eur": 24846.038849066666,
+          "cost_participant_eur": 20205.190143019438,
+          "co2_saved_kg": 2647.3904904696574,
+          "cost_saved_eur": 4640.848706047229,
+          "violations": 0,
+          "co2_estalviat_pct": 14.474991442629392,
+          "cost_estalviat_pct": 18.678424895973148,
+          "infraccions": 0
+        },
+        {
+          "block": 1,
+          "start": "2025-12-15 00:00:00",
+          "end": "2025-12-21 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 4568.722971385211,
+          "score": 7.523645927443109,
+          "score_unclipped": 7.523645927443109,
+          "co2_saved_pct": 7.130655054739429,
+          "cost_saved_pct": 8.440624630418364,
+          "co2_baseline_kg": 20794.475543756562,
+          "co2_participant_kg": 19311.69322228913,
+          "cost_baseline_eur": 27671.366055133334,
+          "cost_participant_eur": 25335.729916310524,
+          "co2_saved_kg": 1482.7823214674318,
+          "cost_saved_eur": 2335.6361388228106,
+          "violations": 0,
+          "co2_estalviat_pct": 7.130655054739429,
+          "cost_estalviat_pct": 8.440624630418364,
+          "infraccions": 0
+        },
+        {
+          "block": 2,
+          "start": "2026-02-09 00:00:00",
+          "end": "2026-02-15 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 4568.722971385211,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 4.005478455784811,
+          "score_unclipped": 4.005478455784811,
+          "co2_saved_pct": -0.9713441414870924,
+          "cost_saved_pct": 15.61806451608592,
+          "co2_baseline_kg": 6735.405680039681,
+          "co2_participant_kg": 6800.829648518135,
+          "cost_baseline_eur": 16482.575023466667,
+          "cost_participant_eur": 13908.315822389379,
+          "co2_saved_kg": -65.4239684784543,
+          "cost_saved_eur": 2574.259201077288,
+          "violations": 0,
+          "co2_estalviat_pct": -0.9713441414870924,
+          "cost_estalviat_pct": 15.61806451608592,
+          "infraccions": 0
+        },
+        {
+          "block": 3,
+          "start": "2026-04-13 00:00:00",
+          "end": "2026-04-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 3089.8260712630563,
+          "score": 30.92864990782369,
+          "score_unclipped": 30.92864990782369,
+          "co2_saved_pct": 28.483857711476265,
+          "cost_saved_pct": 36.633165032634366,
+          "co2_baseline_kg": 9552.227041817185,
+          "co2_participant_kg": 6831.384282948819,
+          "cost_baseline_eur": 16192.41798,
+          "cost_participant_eur": 10260.62277861264,
+          "co2_saved_kg": 2720.8427588683653,
+          "cost_saved_eur": 5931.79520138736,
+          "violations": 0,
+          "co2_estalviat_pct": 28.483857711476265,
+          "cost_estalviat_pct": 36.633165032634366,
+          "infraccions": 0
+        },
+        {
+          "block": 4,
+          "start": "2026-06-08 00:00:00",
+          "end": "2026-06-14 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 3089.8260712630563,
+          "soc_final_kwh": 5121.242638598235,
+          "score": 16.576073070883105,
+          "score_unclipped": 16.576073070883105,
+          "co2_saved_pct": 15.013429715872192,
+          "cost_saved_pct": 20.2222408992419,
+          "co2_baseline_kg": 9212.514712841345,
+          "co2_participant_kg": 7829.4002913645245,
+          "cost_baseline_eur": 19195.479519999997,
+          "cost_participant_eur": 15313.723409700955,
+          "co2_saved_kg": 1383.11442147682,
+          "cost_saved_eur": 3881.756110299042,
+          "violations": 0,
+          "co2_estalviat_pct": 15.013429715872192,
+          "cost_estalviat_pct": 20.2222408992419,
+          "infraccions": 0
+        }
+      ],
+      "config": {
+        "gap_soc": "carry",
+        "initial_soc_kwh": 3000.0,
+        "market_len": 3,
+        "reset_history_every": null,
+        "telemetry_mode": "kit",
+        "terminal_credit": false,
+        "exception_monitoring": true,
+        "strict": true
+      },
+      "soc_initial_kwh": 3000.0,
+      "soc_final_kwh": 5121.242638598235,
+      "soc_min_kwh": 0.0001054092551839858,
+      "soc_max_kwh": 5999.99990513167,
+      "soc_reset_energy_kwh": 0.0,
+      "soc_resets": 0,
+      "explicit_history_resets": [],
+      "errors": 0,
+      "error_details": [],
+      "model_status": {
+        "net": {
+          "trees": 169,
+          "features": 28
+        },
+        "price": {
+          "trees": 73,
+          "features": 44
+        },
+        "co2": {
+          "trees": 31,
+          "features": 44
+        }
+      },
+      "market_loaded": false,
+      "artifact_inventory": {
+        "agent.py": {
+          "bytes": 19406,
+          "sha256": "420bb8c6e6a7aff07b029b0762be12828af78af29a2857643c46a9a3bd47171f"
+        },
+        "model_co2.txt": {
+          "bytes": 102645,
+          "sha256": "8c063a47460f880a0fe55913642c568d4ae9546277d23a30a1b362e4a9edd82f"
+        },
+        "model_net.txt": {
+          "bytes": 739286,
+          "sha256": "2890527389ef5b17250ebf82fea1e58663240714ee3ecca5bc6cdb375f8ec515"
+        },
+        "model_price.txt": {
+          "bytes": 233990,
+          "sha256": "bbe00267645b1d52f2052fcd62720dfeb7ee15e89dca5e7a87e80a41967aeccd"
+        },
+        "prior.json": {
+          "bytes": 311743,
+          "sha256": "457eca464858117db0a7cce9faadb2974c30493a132b731d61ac1e1e75bee21e"
+        }
+      },
+      "runtime": {
+        "import_seconds": 1.1306103289999783,
+        "init_seconds": 0.010630733999960285,
+        "act_total_seconds": 2.0204647719998547,
+        "act_mean_ms": 2.405315204761732,
+        "act_max_ms": 16.916300000048068,
+        "total_seconds": 3.290800549000039
+      },
+      "grid_kwh": 740901.6040041503,
+      "baseline_grid_kwh": 733092.6233333333,
+      "export_kwh": 7617.381995546619,
+      "hores": 840,
+      "temps_s": 3.290800549000039,
+      "errors_planificacio": 0,
+      "models_carregats": [
+        "net",
+        "price",
+        "co2"
+      ],
+      "mercat_analog_carregat": false
+    },
+    "delivery": {
+      "score": 15.832490797013484,
+      "score_unclipped": 15.832490797013484,
+      "co2_saved_pct": 13.86737381025241,
+      "cost_saved_pct": 20.417763766122658,
+      "co2_baseline_kg": 64584.03268872925,
+      "co2_participant_kg": 55627.92345404755,
+      "cost_baseline_eur": 104387.87742766664,
+      "cost_participant_eur": 83074.20721401599,
+      "co2_saved_kg": 8956.109234681695,
+      "cost_saved_eur": 21313.67021365065,
+      "violations": 0,
+      "co2_estalviat_pct": 13.86737381025241,
+      "cost_estalviat_pct": 20.417763766122658,
+      "infraccions": 0,
+      "label": "oof_delivery",
+      "hours": 840,
+      "start": "2025-09-15 00:00:00",
+      "end": "2026-06-14 23:00:00",
+      "periods": [
+        {
+          "block": 0,
+          "start": "2025-09-15 00:00:00",
+          "end": "2025-09-21 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 16.290424614130277,
+          "score_unclipped": 16.290424614130277,
+          "co2_saved_pct": 15.484029558856816,
+          "cost_saved_pct": 18.17201307643502,
+          "co2_baseline_kg": 18289.40971027446,
+          "co2_participant_kg": 15457.472104595134,
+          "cost_baseline_eur": 24846.038849066666,
+          "cost_participant_eur": 20331.013420438147,
+          "co2_saved_kg": 2831.937605679326,
+          "cost_saved_eur": 4515.02542862852,
+          "violations": 0,
+          "co2_estalviat_pct": 15.484029558856816,
+          "cost_estalviat_pct": 18.17201307643502,
+          "infraccions": 0
+        },
+        {
+          "block": 1,
+          "start": "2025-12-15 00:00:00",
+          "end": "2025-12-21 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 1837.4352704912783,
+          "score": 10.255465595903427,
+          "score_unclipped": 10.255465595903427,
+          "co2_saved_pct": 9.606907880021119,
+          "cost_saved_pct": 11.768766932962146,
+          "co2_baseline_kg": 20794.475543756562,
+          "co2_participant_kg": 18796.76943413435,
+          "cost_baseline_eur": 27671.366055133334,
+          "cost_participant_eur": 24414.78747693789,
+          "co2_saved_kg": 1997.7061096222133,
+          "cost_saved_eur": 3256.5785781954437,
+          "violations": 0,
+          "co2_estalviat_pct": 9.606907880021119,
+          "cost_estalviat_pct": 11.768766932962146,
+          "infraccions": 0
+        },
+        {
+          "block": 2,
+          "start": "2026-02-09 00:00:00",
+          "end": "2026-02-15 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 1837.4352704912783,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 4.945551427530875,
+          "score_unclipped": 4.945551427530875,
+          "co2_saved_pct": -0.28308421213756735,
+          "cost_saved_pct": 17.145701253423905,
+          "co2_baseline_kg": 6735.405680039681,
+          "co2_participant_kg": 6754.47255014329,
+          "cost_baseline_eur": 16482.575023466667,
+          "cost_participant_eur": 13656.521951071607,
+          "co2_saved_kg": -19.06687010360929,
+          "cost_saved_eur": 2826.0530723950596,
+          "violations": 0,
+          "co2_estalviat_pct": -0.28308421213756735,
+          "cost_estalviat_pct": 17.145701253423905,
+          "infraccions": 0
+        },
+        {
+          "block": 3,
+          "start": "2026-04-13 00:00:00",
+          "end": "2026-04-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 29.074575776542126,
+          "score_unclipped": 29.074575776542126,
+          "co2_saved_pct": 26.648991977481902,
+          "cost_saved_pct": 34.73427130768264,
+          "co2_baseline_kg": 9552.227041817185,
+          "co2_participant_kg": 7006.654823772466,
+          "cost_baseline_eur": 16192.41798,
+          "cost_participant_eur": 10568.099587552815,
+          "co2_saved_kg": 2545.5722180447183,
+          "cost_saved_eur": 5624.318392447185,
+          "violations": 0,
+          "co2_estalviat_pct": 26.648991977481902,
+          "cost_estalviat_pct": 34.73427130768264,
+          "infraccions": 0
+        },
+        {
+          "block": 4,
+          "start": "2026-06-08 00:00:00",
+          "end": "2026-06-14 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 5075.342748159877,
+          "score": 20.114719392199355,
+          "score_unclipped": 20.114719392199355,
+          "co2_saved_pct": 17.367246851816162,
+          "cost_saved_pct": 26.52548865309348,
+          "co2_baseline_kg": 9212.514712841345,
+          "co2_participant_kg": 7612.554541402305,
+          "cost_baseline_eur": 19195.479519999997,
+          "cost_participant_eur": 14103.784778015515,
+          "co2_saved_kg": 1599.9601714390392,
+          "cost_saved_eur": 5091.694741984482,
+          "violations": 0,
+          "co2_estalviat_pct": 17.367246851816162,
+          "cost_estalviat_pct": 26.52548865309348,
+          "infraccions": 0
+        }
+      ],
+      "config": {
+        "gap_soc": "carry",
+        "initial_soc_kwh": 3000.0,
+        "market_len": 3,
+        "reset_history_every": null,
+        "telemetry_mode": "kit",
+        "terminal_credit": false,
+        "exception_monitoring": true,
+        "strict": true
+      },
+      "soc_initial_kwh": 3000.0,
+      "soc_final_kwh": 5075.342748159877,
+      "soc_min_kwh": 0.00010540925529767264,
+      "soc_max_kwh": 5999.99990513167,
+      "soc_reset_energy_kwh": 0.0,
+      "soc_resets": 0,
+      "explicit_history_resets": [],
+      "errors": 0,
+      "error_details": [],
+      "model_status": {
+        "net": {
+          "trees": 79,
+          "features": 28
+        },
+        "q0": {
+          "trees": 142,
+          "features": 28
+        },
+        "q1": {
+          "trees": 122,
+          "features": 28
+        },
+        "q2": {
+          "trees": 81,
+          "features": 28
+        },
+        "q3": {
+          "trees": 106,
+          "features": 28
+        },
+        "q4": {
+          "trees": 374,
+          "features": 28
+        },
+        "q5": {
+          "trees": 155,
+          "features": 28
+        },
+        "q6": {
+          "trees": 76,
+          "features": 28
+        }
+      },
+      "market_loaded": true,
+      "artifact_inventory": {
+        "agent.py": {
+          "bytes": 21007,
+          "sha256": "2b332d27661524b8b99f6902e25de29ba06530b57a2a894cd0ef76f7a57afeae"
+        },
+        "analog_library.npz": {
+          "bytes": 1261985,
+          "sha256": "26c0e70d54b8a117ab91252ecf05fb809b6315911e7a4cf7a0815c93b818bc8e"
+        },
+        "model_net.txt": {
+          "bytes": 124780,
+          "sha256": "e25cec25ea59bab98a33f2f42e24ff8cc786e6fadfedc949db540892656e7a70"
+        },
+        "net_q0.txt": {
+          "bytes": 401228,
+          "sha256": "32926af484eabd53e0f3e159c2d33134b752ad61ca822e178f83211010d429f2"
+        },
+        "net_q1.txt": {
+          "bytes": 350036,
+          "sha256": "618579f3d609e68fd20c2a54ff543de73fceb2e2de4de4544089df2acff9d010"
+        },
+        "net_q2.txt": {
+          "bytes": 232889,
+          "sha256": "c18c29546732485722ef013a63b730ea3055a3d22f4f2d0c7f412b1e97d655ee"
+        },
+        "net_q3.txt": {
+          "bytes": 299461,
+          "sha256": "ae2b701399e98c4f674a7c445a562ae42a59360a0dcc260ed18c3d0d9496049e"
+        },
+        "net_q4.txt": {
+          "bytes": 1075458,
+          "sha256": "91e211266abb3c77995ee246f0e435eda0467e4883115b47dff65aa6254b96a8"
+        },
+        "net_q5.txt": {
+          "bytes": 447074,
+          "sha256": "8a6b56ab675a5c91a5d20634e4bdfb04aa07213fb57f5308e7f7d8f4a0eea35e"
+        },
+        "net_q6.txt": {
+          "bytes": 220292,
+          "sha256": "ea6ff26e935193d016f4887649171d0575057f4bd30f09d226aec2daa192fcbb"
+        },
+        "prior.json": {
+          "bytes": 311743,
+          "sha256": "457eca464858117db0a7cce9faadb2974c30493a132b731d61ac1e1e75bee21e"
+        }
+      },
+      "runtime": {
+        "import_seconds": 0.00037961300000688425,
+        "init_seconds": 0.030406312000025082,
+        "act_total_seconds": 2.136053508000032,
+        "act_mean_ms": 2.542920842857181,
+        "act_max_ms": 24.419417999979487,
+        "total_seconds": 2.298080476999985
+      },
+      "grid_kwh": 738699.7091895589,
+      "baseline_grid_kwh": 733092.6233333333,
+      "export_kwh": 3224.458367935885,
+      "hores": 840,
+      "temps_s": 2.298080476999985,
+      "errors_planificacio": 0,
+      "models_carregats": [
+        "net",
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "mercat_analog_carregat": true
+    }
+  },
+  "confirmation": {
+    "baseline": {
+      "score": 17.02673455398363,
+      "score_unclipped": 17.02673455398363,
+      "co2_saved_pct": 16.087379512151426,
+      "cost_saved_pct": 19.218562984925445,
+      "co2_baseline_kg": 83074.00128266854,
+      "co2_participant_kg": 69709.57142039611,
+      "cost_baseline_eur": 121902.33668533333,
+      "cost_participant_eur": 98474.45932936667,
+      "co2_saved_kg": 13364.429862272431,
+      "cost_saved_eur": 23427.87735596666,
+      "violations": 0,
+      "co2_estalviat_pct": 16.087379512151426,
+      "cost_estalviat_pct": 19.218562984925445,
+      "infraccions": 0,
+      "label": "oof_baseline",
+      "hours": 840,
+      "start": "2025-10-13 00:00:00",
+      "end": "2026-07-19 23:00:00",
+      "periods": [
+        {
+          "block": 0,
+          "start": "2025-10-13 00:00:00",
+          "end": "2025-10-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 12.848342476689634,
+          "score_unclipped": 12.848342476689634,
+          "co2_saved_pct": 12.172968396760009,
+          "cost_saved_pct": 14.424215329858763,
+          "co2_baseline_kg": 24977.47900725112,
+          "co2_participant_kg": 21936.978381391076,
+          "cost_baseline_eur": 25251.612850166664,
+          "cost_participant_eur": 21609.26583839634,
+          "co2_saved_kg": 3040.5006258600442,
+          "cost_saved_eur": 3642.3470117703255,
+          "violations": 0,
+          "co2_estalviat_pct": 12.172968396760009,
+          "cost_estalviat_pct": 14.424215329858763,
+          "infraccions": 0
+        },
+        {
+          "block": 1,
+          "start": "2026-01-12 00:00:00",
+          "end": "2026-01-18 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 0.00010540925529767264,
+          "score": 12.400810272847856,
+          "score_unclipped": 12.400810272847856,
+          "co2_saved_pct": 12.004005785702251,
+          "cost_saved_pct": 13.326687409520941,
+          "co2_baseline_kg": 19336.54042489824,
+          "co2_participant_kg": 17015.3809935388,
+          "cost_baseline_eur": 28110.765454599994,
+          "cost_participant_eur": 24364.531614041854,
+          "co2_saved_kg": 2321.1594313594396,
+          "cost_saved_eur": 3746.2338405581395,
+          "violations": 0,
+          "co2_estalviat_pct": 12.004005785702251,
+          "cost_estalviat_pct": 13.326687409520941,
+          "infraccions": 0
+        },
+        {
+          "block": 2,
+          "start": "2026-03-16 00:00:00",
+          "end": "2026-03-22 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 0.00010540925529767264,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 18.328706703428104,
+          "score_unclipped": 18.328706703428104,
+          "co2_saved_pct": 14.13066678421271,
+          "cost_saved_pct": 28.124133181597355,
+          "co2_baseline_kg": 8033.409214960983,
+          "co2_participant_kg": 6898.2349273826085,
+          "cost_baseline_eur": 18834.15370833333,
+          "cost_participant_eur": 13537.211235774908,
+          "co2_saved_kg": 1135.1742875783748,
+          "cost_saved_eur": 5296.942472558423,
+          "violations": 0,
+          "co2_estalviat_pct": 14.13066678421271,
+          "cost_estalviat_pct": 28.124133181597355,
+          "infraccions": 0
+        },
+        {
+          "block": 3,
+          "start": "2026-05-18 00:00:00",
+          "end": "2026-05-24 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 27.97467741836855,
+          "score_unclipped": 27.97467741836855,
+          "co2_saved_pct": 26.348447260763557,
+          "cost_saved_pct": 31.7692144527802,
+          "co2_baseline_kg": 9288.041755392034,
+          "co2_participant_kg": 6840.786971914867,
+          "cost_baseline_eur": 16515.812645899998,
+          "cost_participant_eur": 11268.868707804635,
+          "co2_saved_kg": 2447.2547834771676,
+          "cost_saved_eur": 5246.943938095363,
+          "violations": 0,
+          "co2_estalviat_pct": 26.348447260763557,
+          "cost_estalviat_pct": 31.7692144527802,
+          "infraccions": 0
+        },
+        {
+          "block": 4,
+          "start": "2026-07-13 00:00:00",
+          "end": "2026-07-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 3643.998984924779,
+          "score": 19.400300966885993,
+          "score_unclipped": 19.400300966885993,
+          "co2_saved_pct": 20.618673726784433,
+          "cost_saved_pct": 16.557431193789633,
+          "co2_baseline_kg": 21438.53088016615,
+          "co2_participant_kg": 17018.190146168763,
+          "cost_baseline_eur": 33189.99202633333,
+          "cost_participant_eur": 27694.581933348927,
+          "co2_saved_kg": 4420.3407339973855,
+          "cost_saved_eur": 5495.410092984406,
+          "violations": 0,
+          "co2_estalviat_pct": 20.618673726784433,
+          "cost_estalviat_pct": 16.557431193789633,
+          "infraccions": 0
+        }
+      ],
+      "config": {
+        "gap_soc": "carry",
+        "initial_soc_kwh": 3000.0,
+        "market_len": 3,
+        "reset_history_every": null,
+        "telemetry_mode": "kit",
+        "terminal_credit": false,
+        "exception_monitoring": true,
+        "strict": true
+      },
+      "soc_initial_kwh": 3000.0,
+      "soc_final_kwh": 3643.998984924779,
+      "soc_min_kwh": 0.0001054092551839858,
+      "soc_max_kwh": 5999.99990513167,
+      "soc_reset_energy_kwh": 0.0,
+      "soc_resets": 0,
+      "explicit_history_resets": [],
+      "errors": 0,
+      "error_details": [],
+      "model_status": {
+        "net": {
+          "trees": 169,
+          "features": 28
+        },
+        "price": {
+          "trees": 73,
+          "features": 44
+        },
+        "co2": {
+          "trees": 31,
+          "features": 44
+        }
+      },
+      "market_loaded": false,
+      "artifact_inventory": {
+        "agent.py": {
+          "bytes": 19406,
+          "sha256": "420bb8c6e6a7aff07b029b0762be12828af78af29a2857643c46a9a3bd47171f"
+        },
+        "model_co2.txt": {
+          "bytes": 102645,
+          "sha256": "8c063a47460f880a0fe55913642c568d4ae9546277d23a30a1b362e4a9edd82f"
+        },
+        "model_net.txt": {
+          "bytes": 739286,
+          "sha256": "2890527389ef5b17250ebf82fea1e58663240714ee3ecca5bc6cdb375f8ec515"
+        },
+        "model_price.txt": {
+          "bytes": 233990,
+          "sha256": "bbe00267645b1d52f2052fcd62720dfeb7ee15e89dca5e7a87e80a41967aeccd"
+        },
+        "prior.json": {
+          "bytes": 311743,
+          "sha256": "457eca464858117db0a7cce9faadb2974c30493a132b731d61ac1e1e75bee21e"
+        }
+      },
+      "runtime": {
+        "import_seconds": 0.00039814999996679035,
+        "init_seconds": 0.007304655999973875,
+        "act_total_seconds": 2.0957306769994375,
+        "act_mean_ms": 2.4949174726183783,
+        "act_max_ms": 7.77238800003488,
+        "total_seconds": 2.244487487000015
+      },
+      "grid_kwh": 744980.8045478096,
+      "baseline_grid_kwh": 741722.9766666666,
+      "export_kwh": 5736.377920511318,
+      "hores": 840,
+      "temps_s": 2.244487487000015,
+      "errors_planificacio": 0,
+      "models_carregats": [
+        "net",
+        "price",
+        "co2"
+      ],
+      "mercat_analog_carregat": false
+    },
+    "delivery": {
+      "score": 18.16918525277804,
+      "score_unclipped": 18.16918525277804,
+      "co2_saved_pct": 17.496089597000033,
+      "cost_saved_pct": 19.739741782926725,
+      "co2_baseline_kg": 83074.00128266854,
+      "co2_participant_kg": 68539.2995864399,
+      "cost_baseline_eur": 121902.33668533333,
+      "cost_participant_eur": 97839.13019629457,
+      "co2_saved_kg": 14534.701696228643,
+      "cost_saved_eur": 24063.206489038756,
+      "violations": 0,
+      "co2_estalviat_pct": 17.496089597000033,
+      "cost_estalviat_pct": 19.739741782926725,
+      "infraccions": 0,
+      "label": "oof_delivery",
+      "hours": 840,
+      "start": "2025-10-13 00:00:00",
+      "end": "2026-07-19 23:00:00",
+      "periods": [
+        {
+          "block": 0,
+          "start": "2025-10-13 00:00:00",
+          "end": "2025-10-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 4348.209527710995,
+          "score": 14.493877156217813,
+          "score_unclipped": 14.493877156217813,
+          "co2_saved_pct": 14.616485000840674,
+          "cost_saved_pct": 14.207792185431142,
+          "co2_baseline_kg": 24977.47900725112,
+          "co2_participant_kg": 21326.649534568132,
+          "cost_baseline_eur": 25251.612850166664,
+          "cost_participant_eur": 21663.91617294536,
+          "co2_saved_kg": 3650.829472682988,
+          "cost_saved_eur": 3587.6966772213054,
+          "violations": 0,
+          "co2_estalviat_pct": 14.616485000840674,
+          "cost_estalviat_pct": 14.207792185431142,
+          "infraccions": 0
+        },
+        {
+          "block": 1,
+          "start": "2026-01-12 00:00:00",
+          "end": "2026-01-18 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 4348.209527710995,
+          "soc_final_kwh": 657.9408464788335,
+          "score": 13.959167521724297,
+          "score_unclipped": 13.959167521724297,
+          "co2_saved_pct": 13.476258724028941,
+          "cost_saved_pct": 15.085954716346793,
+          "co2_baseline_kg": 19336.54042489824,
+          "co2_participant_kg": 16730.69820896251,
+          "cost_baseline_eur": 28110.765454599994,
+          "cost_participant_eur": 23869.98810770058,
+          "co2_saved_kg": 2605.8422159357324,
+          "cost_saved_eur": 4240.777346899413,
+          "violations": 0,
+          "co2_estalviat_pct": 13.476258724028941,
+          "cost_estalviat_pct": 15.085954716346793,
+          "infraccions": 0
+        },
+        {
+          "block": 2,
+          "start": "2026-03-16 00:00:00",
+          "end": "2026-03-22 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 657.9408464788335,
+          "soc_final_kwh": 4576.97505292423,
+          "score": 21.628901591114143,
+          "score_unclipped": 21.628901591114143,
+          "co2_saved_pct": 17.639446647063757,
+          "cost_saved_pct": 30.93762979389838,
+          "co2_baseline_kg": 8033.409214960983,
+          "co2_participant_kg": 6616.360282547637,
+          "cost_baseline_eur": 18834.15370833333,
+          "cost_participant_eur": 13007.312959235382,
+          "co2_saved_kg": 1417.048932413346,
+          "cost_saved_eur": 5826.84074909795,
+          "violations": 0,
+          "co2_estalviat_pct": 17.639446647063757,
+          "cost_estalviat_pct": 30.93762979389838,
+          "infraccions": 0
+        },
+        {
+          "block": 3,
+          "start": "2026-05-18 00:00:00",
+          "end": "2026-05-24 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 4576.97505292423,
+          "soc_final_kwh": 4314.916287580583,
+          "score": 29.29794386746982,
+          "score_unclipped": 29.29794386746982,
+          "co2_saved_pct": 27.440561732092164,
+          "cost_saved_pct": 33.631835516684355,
+          "co2_baseline_kg": 9288.041755392034,
+          "co2_participant_kg": 6739.350923801187,
+          "cost_baseline_eur": 16515.812645899998,
+          "cost_participant_eur": 10961.241702587156,
+          "co2_saved_kg": 2548.6908315908477,
+          "cost_saved_eur": 5554.570943312841,
+          "violations": 0,
+          "co2_estalviat_pct": 27.440561732092164,
+          "cost_estalviat_pct": 33.631835516684355,
+          "infraccions": 0
+        },
+        {
+          "block": 4,
+          "start": "2026-07-13 00:00:00",
+          "end": "2026-07-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 4314.916287580583,
+          "soc_final_kwh": 4173.815307455184,
+          "score": 18.467123859781605,
+          "score_unclipped": 18.467123859781605,
+          "co2_saved_pct": 20.114672351897248,
+          "cost_saved_pct": 14.622844044845108,
+          "co2_baseline_kg": 21438.53088016615,
+          "co2_participant_kg": 17126.240636560415,
+          "cost_baseline_eur": 33189.99202633333,
+          "cost_participant_eur": 28336.671253826084,
+          "co2_saved_kg": 4312.290243605734,
+          "cost_saved_eur": 4853.32077250725,
+          "violations": 0,
+          "co2_estalviat_pct": 20.114672351897248,
+          "cost_estalviat_pct": 14.622844044845108,
+          "infraccions": 0
+        }
+      ],
+      "config": {
+        "gap_soc": "carry",
+        "initial_soc_kwh": 3000.0,
+        "market_len": 3,
+        "reset_history_every": null,
+        "telemetry_mode": "kit",
+        "terminal_credit": false,
+        "exception_monitoring": true,
+        "strict": true
+      },
+      "soc_initial_kwh": 3000.0,
+      "soc_final_kwh": 4173.815307455184,
+      "soc_min_kwh": 0.0001054092551839858,
+      "soc_max_kwh": 5999.99990513167,
+      "soc_reset_energy_kwh": 0.0,
+      "soc_resets": 0,
+      "explicit_history_resets": [],
+      "errors": 0,
+      "error_details": [],
+      "model_status": {
+        "net": {
+          "trees": 79,
+          "features": 28
+        },
+        "q0": {
+          "trees": 142,
+          "features": 28
+        },
+        "q1": {
+          "trees": 122,
+          "features": 28
+        },
+        "q2": {
+          "trees": 81,
+          "features": 28
+        },
+        "q3": {
+          "trees": 106,
+          "features": 28
+        },
+        "q4": {
+          "trees": 374,
+          "features": 28
+        },
+        "q5": {
+          "trees": 155,
+          "features": 28
+        },
+        "q6": {
+          "trees": 76,
+          "features": 28
+        }
+      },
+      "market_loaded": true,
+      "artifact_inventory": {
+        "agent.py": {
+          "bytes": 21007,
+          "sha256": "2b332d27661524b8b99f6902e25de29ba06530b57a2a894cd0ef76f7a57afeae"
+        },
+        "analog_library.npz": {
+          "bytes": 1261985,
+          "sha256": "26c0e70d54b8a117ab91252ecf05fb809b6315911e7a4cf7a0815c93b818bc8e"
+        },
+        "model_net.txt": {
+          "bytes": 124780,
+          "sha256": "e25cec25ea59bab98a33f2f42e24ff8cc786e6fadfedc949db540892656e7a70"
+        },
+        "net_q0.txt": {
+          "bytes": 401228,
+          "sha256": "32926af484eabd53e0f3e159c2d33134b752ad61ca822e178f83211010d429f2"
+        },
+        "net_q1.txt": {
+          "bytes": 350036,
+          "sha256": "618579f3d609e68fd20c2a54ff543de73fceb2e2de4de4544089df2acff9d010"
+        },
+        "net_q2.txt": {
+          "bytes": 232889,
+          "sha256": "c18c29546732485722ef013a63b730ea3055a3d22f4f2d0c7f412b1e97d655ee"
+        },
+        "net_q3.txt": {
+          "bytes": 299461,
+          "sha256": "ae2b701399e98c4f674a7c445a562ae42a59360a0dcc260ed18c3d0d9496049e"
+        },
+        "net_q4.txt": {
+          "bytes": 1075458,
+          "sha256": "91e211266abb3c77995ee246f0e435eda0467e4883115b47dff65aa6254b96a8"
+        },
+        "net_q5.txt": {
+          "bytes": 447074,
+          "sha256": "8a6b56ab675a5c91a5d20634e4bdfb04aa07213fb57f5308e7f7d8f4a0eea35e"
+        },
+        "net_q6.txt": {
+          "bytes": 220292,
+          "sha256": "ea6ff26e935193d016f4887649171d0575057f4bd30f09d226aec2daa192fcbb"
+        },
+        "prior.json": {
+          "bytes": 311743,
+          "sha256": "457eca464858117db0a7cce9faadb2974c30493a132b731d61ac1e1e75bee21e"
+        }
+      },
+      "runtime": {
+        "import_seconds": 0.0003754569999614432,
+        "init_seconds": 0.024048784999990858,
+        "act_total_seconds": 2.1407544209993716,
+        "act_mean_ms": 2.548517167856395,
+        "act_max_ms": 19.948010000007343,
+        "total_seconds": 2.299241634999987
+      },
+      "grid_kwh": 742476.5478915257,
+      "baseline_grid_kwh": 741722.9766666666,
+      "export_kwh": 916.5148818816434,
+      "hores": 840,
+      "temps_s": 2.299241634999987,
+      "errors_planificacio": 0,
+      "models_carregats": [
+        "net",
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "mercat_analog_carregat": true
+    }
+  },
+  "all": {
+    "baseline": {
+      "score": 16.05569654377839,
+      "score_unclipped": 16.05569654377839,
+      "co2_saved_pct": 14.790123213744536,
+      "cost_saved_pct": 19.008700980524043,
+      "co2_baseline_kg": 147658.0339713978,
+      "co2_participant_kg": 125819.22881203529,
+      "cost_baseline_eur": 226290.21411299997,
+      "cost_participant_eur": 183275.38396407219,
+      "co2_saved_kg": 21838.8051593625,
+      "cost_saved_eur": 43014.83014892778,
+      "violations": 0,
+      "co2_estalviat_pct": 14.790123213744536,
+      "cost_estalviat_pct": 19.008700980524043,
+      "infraccions": 0,
+      "label": "oof_baseline",
+      "hours": 1680,
+      "start": "2025-09-15 00:00:00",
+      "end": "2026-07-19 23:00:00",
+      "periods": [
+        {
+          "block": 0,
+          "start": "2025-09-15 00:00:00",
+          "end": "2025-09-21 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 15.73602147863252,
+          "score_unclipped": 15.73602147863252,
+          "co2_saved_pct": 14.474991442629392,
+          "cost_saved_pct": 18.678424895973148,
+          "co2_baseline_kg": 18289.40971027446,
+          "co2_participant_kg": 15642.019219804803,
+          "cost_baseline_eur": 24846.038849066666,
+          "cost_participant_eur": 20205.190143019438,
+          "co2_saved_kg": 2647.3904904696574,
+          "cost_saved_eur": 4640.848706047229,
+          "violations": 0,
+          "co2_estalviat_pct": 14.474991442629392,
+          "cost_estalviat_pct": 18.678424895973148,
+          "infraccions": 0
+        },
+        {
+          "block": 1,
+          "start": "2025-10-13 00:00:00",
+          "end": "2025-10-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 14.643989824884049,
+          "score_unclipped": 14.643989824884049,
+          "co2_saved_pct": 14.146757562315463,
+          "cost_saved_pct": 15.804198437544088,
+          "co2_baseline_kg": 24977.47900725112,
+          "co2_participant_kg": 21443.975606917065,
+          "cost_baseline_eur": 25251.612850166664,
+          "cost_participant_eur": 21260.797846645943,
+          "co2_saved_kg": 3533.503400334055,
+          "cost_saved_eur": 3990.815003520722,
+          "violations": 0,
+          "co2_estalviat_pct": 14.146757562315463,
+          "cost_estalviat_pct": 15.804198437544088,
+          "infraccions": 0
+        },
+        {
+          "block": 2,
+          "start": "2025-12-15 00:00:00",
+          "end": "2025-12-21 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 4568.722971385211,
+          "score": 7.523645927443109,
+          "score_unclipped": 7.523645927443109,
+          "co2_saved_pct": 7.130655054739429,
+          "cost_saved_pct": 8.440624630418364,
+          "co2_baseline_kg": 20794.475543756562,
+          "co2_participant_kg": 19311.69322228913,
+          "cost_baseline_eur": 27671.366055133334,
+          "cost_participant_eur": 25335.729916310524,
+          "co2_saved_kg": 1482.7823214674318,
+          "cost_saved_eur": 2335.6361388228106,
+          "violations": 0,
+          "co2_estalviat_pct": 7.130655054739429,
+          "cost_estalviat_pct": 8.440624630418364,
+          "infraccions": 0
+        },
+        {
+          "block": 3,
+          "start": "2026-01-12 00:00:00",
+          "end": "2026-01-18 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 4568.722971385211,
+          "soc_final_kwh": 0.00010540925529767264,
+          "score": 11.765082447183802,
+          "score_unclipped": 11.765082447183802,
+          "co2_saved_pct": 11.350103004531078,
+          "cost_saved_pct": 12.733367813373496,
+          "co2_baseline_kg": 19336.54042489824,
+          "co2_participant_kg": 17141.8231691595,
+          "cost_baseline_eur": 28110.765454599994,
+          "cost_participant_eur": 24531.318294111043,
+          "co2_saved_kg": 2194.717255738742,
+          "cost_saved_eur": 3579.4471604889513,
+          "violations": 0,
+          "co2_estalviat_pct": 11.350103004531078,
+          "cost_estalviat_pct": 12.733367813373496,
+          "infraccions": 0
+        },
+        {
+          "block": 4,
+          "start": "2026-02-09 00:00:00",
+          "end": "2026-02-15 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 0.00010540925529767264,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 0.8707178702889284,
+          "score_unclipped": 0.8707178702889284,
+          "co2_saved_pct": -4.572920411524259,
+          "cost_saved_pct": 13.572540527853032,
+          "co2_baseline_kg": 6735.405680039681,
+          "co2_participant_kg": 7043.41042118118,
+          "cost_baseline_eur": 16482.575023466667,
+          "cost_participant_eur": 14245.470848372872,
+          "co2_saved_kg": -308.0047411414989,
+          "cost_saved_eur": 2237.1041750937948,
+          "violations": 0,
+          "co2_estalviat_pct": -4.572920411524259,
+          "cost_estalviat_pct": 13.572540527853032,
+          "infraccions": 0
+        },
+        {
+          "block": 5,
+          "start": "2026-03-16 00:00:00",
+          "end": "2026-03-22 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 22.066005571397877,
+          "score_unclipped": 22.066005571397877,
+          "co2_saved_pct": 18.35610033758448,
+          "cost_saved_pct": 30.722451116962475,
+          "co2_baseline_kg": 8033.409214960983,
+          "co2_participant_kg": 6558.788558933988,
+          "cost_baseline_eur": 18834.15370833333,
+          "cost_participant_eur": 13047.84004199705,
+          "co2_saved_kg": 1474.6206560269957,
+          "cost_saved_eur": 5786.313666336282,
+          "violations": 0,
+          "co2_estalviat_pct": 18.35610033758448,
+          "cost_estalviat_pct": 30.722451116962475,
+          "infraccions": 0
+        },
+        {
+          "block": 6,
+          "start": "2026-04-13 00:00:00",
+          "end": "2026-04-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 3089.8260712630563,
+          "score": 30.92864990782369,
+          "score_unclipped": 30.92864990782369,
+          "co2_saved_pct": 28.483857711476265,
+          "cost_saved_pct": 36.633165032634366,
+          "co2_baseline_kg": 9552.227041817185,
+          "co2_participant_kg": 6831.384282948819,
+          "cost_baseline_eur": 16192.41798,
+          "cost_participant_eur": 10260.62277861264,
+          "co2_saved_kg": 2720.8427588683653,
+          "cost_saved_eur": 5931.79520138736,
+          "violations": 0,
+          "co2_estalviat_pct": 28.483857711476265,
+          "cost_estalviat_pct": 36.633165032634366,
+          "infraccions": 0
+        },
+        {
+          "block": 7,
+          "start": "2026-05-18 00:00:00",
+          "end": "2026-05-24 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 3089.8260712630563,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 25.116598769098125,
+          "score_unclipped": 25.116598769098125,
+          "co2_saved_pct": 23.220915353324866,
+          "cost_saved_pct": 29.539860072569066,
+          "co2_baseline_kg": 9288.041755392034,
+          "co2_participant_kg": 7131.273441390981,
+          "cost_baseline_eur": 16515.812645899998,
+          "cost_participant_eur": 11637.064700453471,
+          "co2_saved_kg": 2156.768314001053,
+          "cost_saved_eur": 4878.7479454465265,
+          "violations": 0,
+          "co2_estalviat_pct": 23.220915353324866,
+          "cost_estalviat_pct": 29.539860072569066,
+          "infraccions": 0
+        },
+        {
+          "block": 8,
+          "start": "2026-06-08 00:00:00",
+          "end": "2026-06-14 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 5121.242638598235,
+          "score": 19.200020871765812,
+          "score_unclipped": 19.200020871765812,
+          "co2_saved_pct": 17.872229650991653,
+          "cost_saved_pct": 22.29820038690552,
+          "co2_baseline_kg": 9212.514712841345,
+          "co2_participant_kg": 7566.032926730945,
+          "cost_baseline_eur": 19195.479519999997,
+          "cost_participant_eur": 14915.233031402988,
+          "co2_saved_kg": 1646.4817861103993,
+          "cost_saved_eur": 4280.246488597009,
+          "violations": 0,
+          "co2_estalviat_pct": 17.872229650991653,
+          "cost_estalviat_pct": 22.29820038690552,
+          "infraccions": 0
+        },
+        {
+          "block": 9,
+          "start": "2026-07-13 00:00:00",
+          "end": "2026-07-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5121.242638598235,
+          "soc_final_kwh": 3643.998984924779,
+          "score": 18.845817895474976,
+          "score_unclipped": 18.845817895474976,
+          "co2_saved_pct": 20.009313797970567,
+          "cost_saved_pct": 16.130994122985264,
+          "co2_baseline_kg": 21438.53088016615,
+          "co2_participant_kg": 17148.827962678883,
+          "cost_baseline_eur": 33189.99202633333,
+          "cost_participant_eur": 27836.116363146226,
+          "co2_saved_kg": 4289.702917487266,
+          "cost_saved_eur": 5353.875663187107,
+          "violations": 0,
+          "co2_estalviat_pct": 20.009313797970567,
+          "cost_estalviat_pct": 16.130994122985264,
+          "infraccions": 0
+        }
+      ],
+      "config": {
+        "gap_soc": "carry",
+        "initial_soc_kwh": 3000.0,
+        "market_len": 3,
+        "reset_history_every": null,
+        "telemetry_mode": "kit",
+        "terminal_credit": false,
+        "exception_monitoring": true,
+        "strict": true
+      },
+      "soc_initial_kwh": 3000.0,
+      "soc_final_kwh": 3643.998984924779,
+      "soc_min_kwh": 0.0001054092551839858,
+      "soc_max_kwh": 5999.99990513167,
+      "soc_reset_energy_kwh": 0.0,
+      "soc_resets": 0,
+      "explicit_history_resets": [],
+      "errors": 0,
+      "error_details": [],
+      "model_status": {
+        "net": {
+          "trees": 169,
+          "features": 28
+        },
+        "price": {
+          "trees": 73,
+          "features": 44
+        },
+        "co2": {
+          "trees": 31,
+          "features": 44
+        }
+      },
+      "market_loaded": false,
+      "artifact_inventory": {
+        "agent.py": {
+          "bytes": 19406,
+          "sha256": "420bb8c6e6a7aff07b029b0762be12828af78af29a2857643c46a9a3bd47171f"
+        },
+        "model_co2.txt": {
+          "bytes": 102645,
+          "sha256": "8c063a47460f880a0fe55913642c568d4ae9546277d23a30a1b362e4a9edd82f"
+        },
+        "model_net.txt": {
+          "bytes": 739286,
+          "sha256": "2890527389ef5b17250ebf82fea1e58663240714ee3ecca5bc6cdb375f8ec515"
+        },
+        "model_price.txt": {
+          "bytes": 233990,
+          "sha256": "bbe00267645b1d52f2052fcd62720dfeb7ee15e89dca5e7a87e80a41967aeccd"
+        },
+        "prior.json": {
+          "bytes": 311743,
+          "sha256": "457eca464858117db0a7cce9faadb2974c30493a132b731d61ac1e1e75bee21e"
+        }
+      },
+      "runtime": {
+        "import_seconds": 0.0003141760000175964,
+        "init_seconds": 0.008451665999984925,
+        "act_total_seconds": 3.937732892999236,
+        "act_mean_ms": 2.34388862678526,
+        "act_max_ms": 7.842442999958621,
+        "total_seconds": 4.1814202700000465
+      },
+      "grid_kwh": 1483676.1521999738,
+      "baseline_grid_kwh": 1474815.6,
+      "export_kwh": 13433.37457823299,
+      "hores": 1680,
+      "temps_s": 4.1814202700000465,
+      "errors_planificacio": 0,
+      "models_carregats": [
+        "net",
+        "price",
+        "co2"
+      ],
+      "mercat_analog_carregat": false
+    },
+    "delivery": {
+      "score": 17.313536264232983,
+      "score_unclipped": 17.313536264232983,
+      "co2_saved_pct": 16.142785065459872,
+      "cost_saved_pct": 20.045289061370244,
+      "co2_baseline_kg": 147658.0339713978,
+      "co2_participant_kg": 123821.91491551133,
+      "cost_baseline_eur": 226290.21411299997,
+      "cost_participant_eur": 180929.68657645548,
+      "co2_saved_kg": 23836.119055886462,
+      "cost_saved_eur": 45360.52753654448,
+      "violations": 0,
+      "co2_estalviat_pct": 16.142785065459872,
+      "cost_estalviat_pct": 20.045289061370244,
+      "infraccions": 0,
+      "label": "oof_delivery",
+      "hours": 1680,
+      "start": "2025-09-15 00:00:00",
+      "end": "2026-07-19 23:00:00",
+      "periods": [
+        {
+          "block": 0,
+          "start": "2025-09-15 00:00:00",
+          "end": "2025-09-21 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 16.290424614130277,
+          "score_unclipped": 16.290424614130277,
+          "co2_saved_pct": 15.484029558856816,
+          "cost_saved_pct": 18.17201307643502,
+          "co2_baseline_kg": 18289.40971027446,
+          "co2_participant_kg": 15457.472104595134,
+          "cost_baseline_eur": 24846.038849066666,
+          "cost_participant_eur": 20331.013420438147,
+          "co2_saved_kg": 2831.937605679326,
+          "cost_saved_eur": 4515.02542862852,
+          "violations": 0,
+          "co2_estalviat_pct": 15.484029558856816,
+          "cost_estalviat_pct": 18.17201307643502,
+          "infraccions": 0
+        },
+        {
+          "block": 1,
+          "start": "2025-10-13 00:00:00",
+          "end": "2025-10-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 4348.209527710995,
+          "score": 16.343921470537413,
+          "score_unclipped": 16.343921470537413,
+          "co2_saved_pct": 16.632171795725576,
+          "cost_saved_pct": 15.671337378431708,
+          "co2_baseline_kg": 24977.47900725112,
+          "co2_participant_kg": 20823.181788523823,
+          "cost_baseline_eur": 25251.612850166664,
+          "cost_participant_eur": 21294.34740692163,
+          "co2_saved_kg": 4154.297218727297,
+          "cost_saved_eur": 3957.2654432450327,
+          "violations": 0,
+          "co2_estalviat_pct": 16.632171795725576,
+          "cost_estalviat_pct": 15.671337378431708,
+          "infraccions": 0
+        },
+        {
+          "block": 2,
+          "start": "2025-12-15 00:00:00",
+          "end": "2025-12-21 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 4348.209527710995,
+          "soc_final_kwh": 1837.4352704912783,
+          "score": 9.378126819129665,
+          "score_unclipped": 9.378126819129665,
+          "co2_saved_pct": 8.81121674447885,
+          "cost_saved_pct": 10.700916993314902,
+          "co2_baseline_kg": 20794.475543756562,
+          "co2_participant_kg": 18962.229232718524,
+          "cost_baseline_eur": 27671.366055133334,
+          "cost_participant_eur": 24710.2761426572,
+          "co2_saved_kg": 1832.2463110380377,
+          "cost_saved_eur": 2961.0899124761345,
+          "violations": 0,
+          "co2_estalviat_pct": 8.81121674447885,
+          "cost_estalviat_pct": 10.700916993314902,
+          "infraccions": 0
+        },
+        {
+          "block": 3,
+          "start": "2026-01-12 00:00:00",
+          "end": "2026-01-18 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 1837.4352704912783,
+          "soc_final_kwh": 657.9408464788335,
+          "score": 12.787838582587998,
+          "score_unclipped": 12.787838582587998,
+          "co2_saved_pct": 12.358011166087769,
+          "cost_saved_pct": 13.790769221088539,
+          "co2_baseline_kg": 19336.54042489824,
+          "co2_participant_kg": 16946.92860005424,
+          "cost_baseline_eur": 28110.765454599994,
+          "cost_participant_eur": 24234.07466447463,
+          "co2_saved_kg": 2389.611824844,
+          "cost_saved_eur": 3876.6907901253653,
+          "violations": 0,
+          "co2_estalviat_pct": 12.358011166087769,
+          "cost_estalviat_pct": 13.790769221088539,
+          "infraccions": 0
+        },
+        {
+          "block": 4,
+          "start": "2026-02-09 00:00:00",
+          "end": "2026-02-15 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 657.9408464788335,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 4.107684346475491,
+          "score_unclipped": 4.107684346475491,
+          "co2_saved_pct": -1.250347239747843,
+          "cost_saved_pct": 16.60975804766327,
+          "co2_baseline_kg": 6735.405680039681,
+          "co2_participant_kg": 6819.621639045877,
+          "cost_baseline_eur": 16482.575023466667,
+          "cost_participant_eur": 13744.859192044276,
+          "co2_saved_kg": -84.21595900619559,
+          "cost_saved_eur": 2737.7158314223907,
+          "violations": 0,
+          "co2_estalviat_pct": -1.250347239747843,
+          "cost_estalviat_pct": 16.60975804766327,
+          "infraccions": 0
+        },
+        {
+          "block": 5,
+          "start": "2026-03-16 00:00:00",
+          "end": "2026-03-22 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 4576.97505292423,
+          "score": 24.689968689490776,
+          "score_unclipped": 24.689968689490776,
+          "co2_saved_pct": 21.041834082449295,
+          "cost_saved_pct": 33.202282772587566,
+          "co2_baseline_kg": 8033.409214960983,
+          "co2_participant_kg": 6343.032576784701,
+          "cost_baseline_eur": 18834.15370833333,
+          "cost_participant_eur": 12580.784736268712,
+          "co2_saved_kg": 1690.3766381762825,
+          "cost_saved_eur": 6253.36897206462,
+          "violations": 0,
+          "co2_estalviat_pct": 21.041834082449295,
+          "cost_estalviat_pct": 33.202282772587566,
+          "infraccions": 0
+        },
+        {
+          "block": 6,
+          "start": "2026-04-13 00:00:00",
+          "end": "2026-04-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 4576.97505292423,
+          "soc_final_kwh": 5999.99990513167,
+          "score": 28.296131609268336,
+          "score_unclipped": 28.296131609268336,
+          "co2_saved_pct": 25.909332852526838,
+          "cost_saved_pct": 33.865328708331845,
+          "co2_baseline_kg": 9552.227041817185,
+          "co2_participant_kg": 7077.308742723692,
+          "cost_baseline_eur": 16192.41798,
+          "cost_participant_eur": 10708.802405245973,
+          "co2_saved_kg": 2474.9182990934924,
+          "cost_saved_eur": 5483.615574754027,
+          "violations": 0,
+          "co2_estalviat_pct": 25.909332852526838,
+          "cost_estalviat_pct": 33.865328708331845,
+          "infraccions": 0
+        },
+        {
+          "block": 7,
+          "start": "2026-05-18 00:00:00",
+          "end": "2026-05-24 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5999.99990513167,
+          "soc_final_kwh": 4314.916287580583,
+          "score": 30.68246096385024,
+          "score_unclipped": 30.68246096385024,
+          "co2_saved_pct": 28.93824588538844,
+          "cost_saved_pct": 34.75229614692778,
+          "co2_baseline_kg": 9288.041755392034,
+          "co2_participant_kg": 6600.245394279139,
+          "cost_baseline_eur": 16515.812645899998,
+          "cost_participant_eur": 10776.18852412508,
+          "co2_saved_kg": 2687.7963611128953,
+          "cost_saved_eur": 5739.6241217749175,
+          "violations": 0,
+          "co2_estalviat_pct": 28.93824588538844,
+          "cost_estalviat_pct": 34.75229614692778,
+          "infraccions": 0
+        },
+        {
+          "block": 8,
+          "start": "2026-06-08 00:00:00",
+          "end": "2026-06-14 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 4314.916287580583,
+          "soc_final_kwh": 5075.342748159877,
+          "score": 18.59586514898129,
+          "score_unclipped": 18.59586514898129,
+          "co2_saved_pct": 15.682638629610121,
+          "cost_saved_pct": 25.393393694180684,
+          "co2_baseline_kg": 9212.514712841345,
+          "co2_participant_kg": 7767.749321726772,
+          "cost_baseline_eur": 19195.479519999997,
+          "cost_participant_eur": 14321.095834000573,
+          "co2_saved_kg": 1444.7653911145726,
+          "cost_saved_eur": 4874.383685999424,
+          "violations": 0,
+          "co2_estalviat_pct": 15.682638629610121,
+          "cost_estalviat_pct": 25.393393694180684,
+          "infraccions": 0
+        },
+        {
+          "block": 9,
+          "start": "2026-07-13 00:00:00",
+          "end": "2026-07-19 23:00:00",
+          "hours": 168,
+          "soc_initial_kwh": 5075.342748159877,
+          "soc_final_kwh": 4173.815307455184,
+          "score": 18.89848540614301,
+          "score_unclipped": 18.89848540614301,
+          "co2_saved_pct": 20.59089491617497,
+          "cost_saved_pct": 14.949529882735106,
+          "co2_baseline_kg": 21438.53088016615,
+          "co2_participant_kg": 17024.145515059416,
+          "cost_baseline_eur": 33189.99202633333,
+          "cost_participant_eur": 28228.244250279233,
+          "co2_saved_kg": 4414.385365106733,
+          "cost_saved_eur": 4961.7477760541005,
+          "violations": 0,
+          "co2_estalviat_pct": 20.59089491617497,
+          "cost_estalviat_pct": 14.949529882735106,
+          "infraccions": 0
+        }
+      ],
+      "config": {
+        "gap_soc": "carry",
+        "initial_soc_kwh": 3000.0,
+        "market_len": 3,
+        "reset_history_every": null,
+        "telemetry_mode": "kit",
+        "terminal_credit": false,
+        "exception_monitoring": true,
+        "strict": true
+      },
+      "soc_initial_kwh": 3000.0,
+      "soc_final_kwh": 4173.815307455184,
+      "soc_min_kwh": 0.0001054092551839858,
+      "soc_max_kwh": 5999.99990513167,
+      "soc_reset_energy_kwh": 0.0,
+      "soc_resets": 0,
+      "explicit_history_resets": [],
+      "errors": 0,
+      "error_details": [],
+      "model_status": {
+        "net": {
+          "trees": 79,
+          "features": 28
+        },
+        "q0": {
+          "trees": 142,
+          "features": 28
+        },
+        "q1": {
+          "trees": 122,
+          "features": 28
+        },
+        "q2": {
+          "trees": 81,
+          "features": 28
+        },
+        "q3": {
+          "trees": 106,
+          "features": 28
+        },
+        "q4": {
+          "trees": 374,
+          "features": 28
+        },
+        "q5": {
+          "trees": 155,
+          "features": 28
+        },
+        "q6": {
+          "trees": 76,
+          "features": 28
+        }
+      },
+      "market_loaded": true,
+      "artifact_inventory": {
+        "agent.py": {
+          "bytes": 21007,
+          "sha256": "2b332d27661524b8b99f6902e25de29ba06530b57a2a894cd0ef76f7a57afeae"
+        },
+        "analog_library.npz": {
+          "bytes": 1261985,
+          "sha256": "26c0e70d54b8a117ab91252ecf05fb809b6315911e7a4cf7a0815c93b818bc8e"
+        },
+        "model_net.txt": {
+          "bytes": 124780,
+          "sha256": "e25cec25ea59bab98a33f2f42e24ff8cc786e6fadfedc949db540892656e7a70"
+        },
+        "net_q0.txt": {
+          "bytes": 401228,
+          "sha256": "32926af484eabd53e0f3e159c2d33134b752ad61ca822e178f83211010d429f2"
+        },
+        "net_q1.txt": {
+          "bytes": 350036,
+          "sha256": "618579f3d609e68fd20c2a54ff543de73fceb2e2de4de4544089df2acff9d010"
+        },
+        "net_q2.txt": {
+          "bytes": 232889,
+          "sha256": "c18c29546732485722ef013a63b730ea3055a3d22f4f2d0c7f412b1e97d655ee"
+        },
+        "net_q3.txt": {
+          "bytes": 299461,
+          "sha256": "ae2b701399e98c4f674a7c445a562ae42a59360a0dcc260ed18c3d0d9496049e"
+        },
+        "net_q4.txt": {
+          "bytes": 1075458,
+          "sha256": "91e211266abb3c77995ee246f0e435eda0467e4883115b47dff65aa6254b96a8"
+        },
+        "net_q5.txt": {
+          "bytes": 447074,
+          "sha256": "8a6b56ab675a5c91a5d20634e4bdfb04aa07213fb57f5308e7f7d8f4a0eea35e"
+        },
+        "net_q6.txt": {
+          "bytes": 220292,
+          "sha256": "ea6ff26e935193d016f4887649171d0575057f4bd30f09d226aec2daa192fcbb"
+        },
+        "prior.json": {
+          "bytes": 311743,
+          "sha256": "457eca464858117db0a7cce9faadb2974c30493a132b731d61ac1e1e75bee21e"
+        }
+      },
+      "runtime": {
+        "import_seconds": 0.00043954199998097465,
+        "init_seconds": 0.023139972000024045,
+        "act_total_seconds": 4.185904899999059,
+        "act_mean_ms": 2.4916100595232495,
+        "act_max_ms": 14.061502000004111,
+        "total_seconds": 4.468474852999975
+      },
+      "grid_kwh": 1479264.7650971003,
+      "baseline_grid_kwh": 1474815.6,
+      "export_kwh": 4183.336306051317,
+      "hores": 1680,
+      "temps_s": 4.468474852999975,
+      "errors_planificacio": 0,
+      "models_carregats": [
+        "net",
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "mercat_analog_carregat": true
+    }
+  }
+}

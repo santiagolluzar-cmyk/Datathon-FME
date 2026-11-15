@@ -1,0 +1,34 @@
+{
+  "models": [
+    {
+      "quantile": 0.07142857142857142,
+      "iterations": 142
+    },
+    {
+      "quantile": 0.21428571428571427,
+      "iterations": 122
+    },
+    {
+      "quantile": 0.35714285714285715,
+      "iterations": 81
+    },
+    {
+      "quantile": 0.5,
+      "iterations": 106
+    },
+    {
+      "quantile": 0.6428571428571429,
+      "iterations": 374
+    },
+    {
+      "quantile": 0.7857142857142857,
+      "iterations": 155
+    },
+    {
+      "quantile": 0.9285714285714286,
+      "iterations": 76
+    }
+  ],
+  "baseline": "finite Xn[:,25] else Xn[:,6], minus finite Xn[:,23] else Xn[:,7]",
+  "features": "same28 features as current net model, horizon0 only"
+}

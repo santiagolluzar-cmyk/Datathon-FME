@@ -1,0 +1,62 @@
+{
+  "training_hours": 5993,
+  "net_training_rows": 140244,
+  "net": {
+    "filename": "model_net.txt",
+    "objective": "residual_regression",
+    "num_leaves": 15,
+    "min_data_in_leaf": 500,
+    "iterations": 79
+  },
+  "quantiles": [
+    {
+      "quantile": 0.07142857142857142,
+      "iterations": 142,
+      "filename": "net_q0.txt"
+    },
+    {
+      "quantile": 0.21428571428571427,
+      "iterations": 122,
+      "filename": "net_q1.txt"
+    },
+    {
+      "quantile": 0.35714285714285715,
+      "iterations": 81,
+      "filename": "net_q2.txt"
+    },
+    {
+      "quantile": 0.5,
+      "iterations": 106,
+      "filename": "net_q3.txt"
+    },
+    {
+      "quantile": 0.6428571428571429,
+      "iterations": 374,
+      "filename": "net_q4.txt"
+    },
+    {
+      "quantile": 0.7857142857142857,
+      "iterations": 155,
+      "filename": "net_q5.txt"
+    },
+    {
+      "quantile": 0.9285714285714286,
+      "iterations": 76,
+      "filename": "net_q6.txt"
+    }
+  ],
+  "baseline": "where(isfinite(X[...,25]),X[...,25],X[...,6]) - where(isfinite(X[...,23]),X[...,23],X[...,7])",
+  "forecast_net": "net_baseline(Xn) + model_net.predict(Xn)",
+  "forecast_current_scenarios": "sort(net_baseline(Xn[0]) + [net_qj.predict(Xn[0]) for j in range(7)])",
+  "calibration": "Selected tree counts fixed before full-data fit; no hidden-test labels used",
+  "hashes": {
+    "model_net.txt": "09f8b355f041228222eaa76ea259e01697143aae10dc7ceb96e894d41ef328c6",
+    "net_q0.txt": "f8be4ebdaaec6e7a162cf750a8185d05f1213979164317d9622353f39bb2e067",
+    "net_q1.txt": "64cbb77ff03519745eba43eabb03b7b7735faf8d119e5997c53d030259548ba6",
+    "net_q2.txt": "7414a2472eaefc8f35cdf6b3f6f073519046d72d3280af9cd315885dff5f2953",
+    "net_q3.txt": "cf06e607830c7eb759ed1dc4cebe3cb09765cece79edcc11d172bf1c2babe599",
+    "net_q4.txt": "67a9acca824d4331677486efdbc6b9d4b48a2de220543507c733af68cd55a9ee",
+    "net_q5.txt": "1a18a018fc7d22baabd1adbee66759c56e8707edfa5600ba76f6bd4259c2d297",
+    "net_q6.txt": "52335e4b2602452b85d60ebdddcf04bf8bf643bdffeb1075ecd4bc40d2adeb8b"
+  }
+}

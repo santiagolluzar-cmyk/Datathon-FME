@@ -1,0 +1,32 @@
+{
+  "development": [
+    {
+      "name": "winter",
+      "start": "2025-12-08",
+      "end": "2025-12-22"
+    },
+    {
+      "name": "spring",
+      "start": "2026-03-09",
+      "end": "2026-03-23"
+    },
+    {
+      "name": "summer",
+      "start": "2026-06-01",
+      "end": "2026-06-15"
+    }
+  ],
+  "locked_final": {
+    "start": "2026-06-21 19:00:00",
+    "end": "2026-08-16 23:00:00",
+    "hours": 1008,
+    "train_before": "2026-06-21 19:00:00",
+    "rule": "Last 1008 observed hours, selected before clean model experiments; performance opened once after architecture selection.",
+    "last_included": "2026-08-16 22:00:00",
+    "end_semantics": "exclusive",
+    "independence_limit": "Locked for architecture selection in this run; inherited historical hyperparameter selections and already exposed public-data diagnostics included some July dates. This is not an untouched hidden test."
+  },
+  "scores_aggregation": "sum costs and emissions then percentages; no mean of block scores",
+  "source_data": "supplied train only; public train is not hidden test",
+  "seed": 83
+}

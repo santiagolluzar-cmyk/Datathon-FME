@@ -1,0 +1,48 @@
+{
+  "name": "RMB Hybrid16 guarded",
+  "config": {
+    "market_analog_weight": 0.75,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "short_market_weight_cap": 0.5
+  },
+  "role": "Frozen deployment architecture before the new final1008-hour outcome is read.",
+  "rationale": [
+    "Preserve the audited convex24h MPC and fixed0.6345 CO2/cost ratio.",
+    "Retain600-tree direct-demand architecture; residual/blended demand did not yield a consistent material gain.",
+    "Market75%16-neighbor analog plus25%500-tree market models; use at most50%analog when fewer than3quotes are available.",
+    "Use seven conditional current-hour quantiles; future empirical residual tables are calibrated on independent inner weeks, at unit scale.",
+    "Guarded forward development15.35605 vs clean baseline14.69354 and clean prototype14.89314; blocked seasonal16.74128 vs15.92888 and16.94022. Prototype remains better on blocked development, so there is no universal dominance.",
+    "The short-quote guard is chosen for robustness and reduces dependence on lower terminalSOC; no further tuning after confirmation."
+  ],
+  "final_protocol": {
+    "hours": 1008,
+    "train_before": "2026-06-21 19:00:00",
+    "policies": [
+      "baseline_clean",
+      "prototype_clean",
+      "selected"
+    ],
+    "gap_soc": [
+      "carry",
+      "reset"
+    ],
+    "initial_soc_kwh": 3000,
+    "market_hours": 3,
+    "terminal_credit": false
+  },
+  "recommendation_rule": "Recommend at most one exploratory official attempt only if the selected policy beats the clean baseline under both predeclared final gap modes with zero errors and violations; this cannot establish top1.",
+  "no_more_model_selection_on_final": true,
+  "known_limit": "Final lock is new to current architecture search, not historically untouched: inherited hyperparameter selections and old exposed data diagnostics include some July observations.",
+  "provenance": {
+    "research/build_agent.py": "00434935b1b85eabc452ff2f2046f6380fb6526160ca14f6c51abc739577cdc8",
+    "research/train_clean.py": "17c896aa263ebecad615f14d1556b097f2af7d9d70e196b5040b8d73ad114416",
+    "research/split_manifest.json": "7c31d4d4ed6df79d80a6d67e1a23e7accee97b8737fcf761d1561fbf226e9b56",
+    "research/results/factorial.json": "f23c6b8994bfe37fc1ddd456cc6fddf8e608d318f6f6cd28ff7964bba21e0bcd",
+    "research/results/refinements.json": "1d2a0ca34a6a48a0434a6bf3c4296482239a7a1d7ebad4c8994721b45bce9649",
+    "research/results/combinations.json": "feb94dd26ed8c2efbcae047b40935ac8cd30ba5116fc640ec6e3b6c308e76008",
+    "research/results/guarded.json": "bd4dfce5345f9d1cb082d8bc77dd7cc8653cb310c4d2ce25d28ba395e0f171db",
+    "research/results/blocked.json": "2e735fc2545bfd3fb97e934d8bb83f42cb2922df725b651e5f02d75853fd1c27"
+  }
+}

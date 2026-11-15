@@ -1,0 +1,710 @@
+{
+  "method": "Complete agents, forward chronological train-only refits, aggregate totals; separate 3000kWh starts per development fold.",
+  "results": {
+    "hybrid16_guarded": {
+      "config": {
+        "market_analog_weight": 0.75,
+        "analog_k": 16,
+        "net_residual_weight": 0,
+        "current_quantiles": true,
+        "residual_scale": 1.0,
+        "residual_source": "clean",
+        "ratio_co2_cost": 0.6345,
+        "horizon": 24,
+        "current_scale": 1.0,
+        "market_shrink": 0.0,
+        "short_market_weight_cap": 0.5
+      },
+      "aggregate": {
+        "co2_baseline_kg": 80436.71277211295,
+        "co2_participant_kg": 69793.90721389356,
+        "cost_baseline_eur": 133920.3609539,
+        "cost_participant_eur": 106715.97965362677,
+        "violations": 0,
+        "errors": 0,
+        "hours": 1008,
+        "co2_saved_pct": 13.231278593360429,
+        "cost_saved_pct": 20.313850042293357,
+        "score_unclipped": 15.356050028040308,
+        "score": 15.356050028040308,
+        "runtime_s": 5.300163152000096,
+        "soc_final_kwh": [
+          1902.767546452052,
+          5999.99990513167,
+          5084.196247264275
+        ]
+      },
+      "folds": [
+        {
+          "score": 8.411664773185688,
+          "score_unclipped": 8.411664773185688,
+          "co2_saved_pct": 7.794245001961136,
+          "cost_saved_pct": 9.85231090604298,
+          "co2_baseline_kg": 39330.12289977701,
+          "co2_participant_kg": 36264.63676139597,
+          "cost_baseline_eur": 51556.601104033325,
+          "cost_participant_eur": 46477.084470675574,
+          "co2_saved_kg": 3065.486138381042,
+          "cost_saved_eur": 5079.516633357751,
+          "violations": 0,
+          "co2_estalviat_pct": 7.794245001961136,
+          "cost_estalviat_pct": 9.85231090604298,
+          "infraccions": 0,
+          "label": "hybrid16_guarded",
+          "hours": 336,
+          "start": "2025-12-08 00:00:00",
+          "end": "2025-12-21 23:00:00",
+          "periods": [
+            {
+              "block": 0,
+              "start": "2025-12-08 00:00:00",
+              "end": "2025-12-21 23:00:00",
+              "hours": 336,
+              "soc_initial_kwh": 3000.0,
+              "soc_final_kwh": 1902.767546452052,
+              "score": 8.411664773185688,
+              "score_unclipped": 8.411664773185688,
+              "co2_saved_pct": 7.794245001961136,
+              "cost_saved_pct": 9.85231090604298,
+              "co2_baseline_kg": 39330.12289977701,
+              "co2_participant_kg": 36264.63676139597,
+              "cost_baseline_eur": 51556.601104033325,
+              "cost_participant_eur": 46477.084470675574,
+              "co2_saved_kg": 3065.486138381042,
+              "cost_saved_eur": 5079.516633357751,
+              "violations": 0,
+              "co2_estalviat_pct": 7.794245001961136,
+              "cost_estalviat_pct": 9.85231090604298,
+              "infraccions": 0
+            }
+          ],
+          "config": {
+            "gap_soc": "carry",
+            "initial_soc_kwh": 3000.0,
+            "market_len": 3,
+            "reset_history_every": null,
+            "telemetry_mode": "kit",
+            "terminal_credit": false,
+            "exception_monitoring": true,
+            "strict": true
+          },
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 1902.767546452052,
+          "soc_min_kwh": 0.0001054092551839858,
+          "soc_max_kwh": 5999.99990513167,
+          "soc_reset_energy_kwh": 0.0,
+          "soc_resets": 0,
+          "explicit_history_resets": [],
+          "errors": 0,
+          "error_details": [],
+          "model_status": {
+            "direct": {
+              "trees": 600,
+              "features": 28
+            },
+            "price": {
+              "trees": 500,
+              "features": 44
+            },
+            "co2": {
+              "trees": 500,
+              "features": 44
+            },
+            "q0": {
+              "trees": 142,
+              "features": 28
+            },
+            "q1": {
+              "trees": 122,
+              "features": 28
+            },
+            "q2": {
+              "trees": 81,
+              "features": 28
+            },
+            "q3": {
+              "trees": 106,
+              "features": 28
+            },
+            "q4": {
+              "trees": 374,
+              "features": 28
+            },
+            "q5": {
+              "trees": 155,
+              "features": 28
+            },
+            "q6": {
+              "trees": 76,
+              "features": 28
+            }
+          },
+          "market_loaded": true,
+          "artifact_inventory": {
+            "agent.py": {
+              "bytes": 21812,
+              "sha256": "bc48205936253ab622022e3412de07cced818b4c9a1ede57a97a92e2a41b05a1"
+            },
+            "analog_library.npz": {
+              "bytes": 412009,
+              "sha256": "6843f79f064773693fb19a005aff4cfad7122ccfdc8ac9ffa4c28d11c5727e9f"
+            },
+            "config.json": {
+              "bytes": 291,
+              "sha256": "b14cc09b9ee24b0ac743cf87a2a93ca0bc14e814b40d0829dd30a5eab6fa2bb0"
+            },
+            "manifest.json": {
+              "bytes": 1199,
+              "sha256": "543143ff240fbfc707790c739bf19d1263c0662f01b6a32401512a052467bf26"
+            },
+            "model_co2.txt": {
+              "bytes": 1576564,
+              "sha256": "98a7be058850223b668caddac10acb78a9ec36eb5a42a28923d69817692e6185"
+            },
+            "model_direct.txt": {
+              "bytes": 3314535,
+              "sha256": "8683ef1f7a0a5d24967e168d7362b409bcdea2639005541c786ff00ece0d31de"
+            },
+            "model_price.txt": {
+              "bytes": 1573521,
+              "sha256": "5fd54f6d9b080ff6a00ae4c0a5db98e6e4329477f48a4c3d6aad220e2fdb5afc"
+            },
+            "net_q0.txt": {
+              "bytes": 183283,
+              "sha256": "157e79981d8ffeb4cde1f4568a5a88052aa072bf095edcec7c67e040f1336f56"
+            },
+            "net_q1.txt": {
+              "bytes": 180767,
+              "sha256": "08bd1b337aa491c3016d2844bfd0ef422dae89815b7d237fbee6d5f54a3ad7ad"
+            },
+            "net_q2.txt": {
+              "bytes": 123962,
+              "sha256": "0b9c4cdd898763b4c678272cc64d5165f17b6696680dfab6a0161e322c1e12aa"
+            },
+            "net_q3.txt": {
+              "bytes": 178352,
+              "sha256": "516781d27320f5a11609c6b0028ff741f400bf9a0fb9e7eb075ad1770ceea476"
+            },
+            "net_q4.txt": {
+              "bytes": 561520,
+              "sha256": "d1e661cedf807e70a6d13c53d2adb8089b95abbf305a16647483b903f782fed3"
+            },
+            "net_q5.txt": {
+              "bytes": 232929,
+              "sha256": "2a543d3fce7f4c0f75a141902224562b0fb8f47f71e419519adfdd013a4bdfda"
+            },
+            "net_q6.txt": {
+              "bytes": 93791,
+              "sha256": "cc1e9270a88890c8e7d9df6f5b8468e6685c9a542709d163d654e8bc61cd518b"
+            },
+            "prior.json": {
+              "bytes": 263102,
+              "sha256": "a70bd76146525ff50cebb8949a8aab11e9f1182c92fe24c6a8b104a3af61e7d1"
+            }
+          },
+          "runtime": {
+            "import_seconds": 1.0931885210000019,
+            "init_seconds": 0.03931516299996929,
+            "act_total_seconds": 1.3485908310002515,
+            "act_mean_ms": 4.0136631875007485,
+            "act_max_ms": 8.36319799998364,
+            "total_seconds": 2.5413431819999914
+          },
+          "grid_kwh": 334239.5168702788,
+          "baseline_grid_kwh": 324765.7533333333,
+          "export_kwh": 70.6019254429333,
+          "hores": 336,
+          "temps_s": 2.5413431819999914,
+          "errors_planificacio": 0,
+          "models_carregats": [
+            "direct",
+            "price",
+            "co2",
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ],
+          "mercat_analog_carregat": true,
+          "fold": "winter",
+          "policy_config": {
+            "market_analog_weight": 0.75,
+            "analog_k": 16,
+            "net_residual_weight": 0,
+            "current_quantiles": true,
+            "residual_scale": 1.0,
+            "residual_source": "clean",
+            "ratio_co2_cost": 0.6345,
+            "horizon": 24,
+            "current_scale": 1.0,
+            "market_shrink": 0.0,
+            "short_market_weight_cap": 0.5
+          }
+        },
+        {
+          "score": 21.783115638511582,
+          "score_unclipped": 21.783115638511582,
+          "co2_saved_pct": 18.86858562390844,
+          "cost_saved_pct": 28.583685672585588,
+          "co2_baseline_kg": 19797.544506603524,
+          "co2_participant_kg": 16062.027869943657,
+          "cost_baseline_eur": 41716.224637566665,
+          "cost_participant_eur": 29792.1901126949,
+          "co2_saved_kg": 3735.516636659868,
+          "cost_saved_eur": 11924.034524871764,
+          "violations": 0,
+          "co2_estalviat_pct": 18.86858562390844,
+          "cost_estalviat_pct": 28.583685672585588,
+          "infraccions": 0,
+          "label": "hybrid16_guarded",
+          "hours": 336,
+          "start": "2026-03-09 00:00:00",
+          "end": "2026-03-22 23:00:00",
+          "periods": [
+            {
+              "block": 0,
+              "start": "2026-03-09 00:00:00",
+              "end": "2026-03-22 23:00:00",
+              "hours": 336,
+              "soc_initial_kwh": 3000.0,
+              "soc_final_kwh": 5999.99990513167,
+              "score": 21.783115638511582,
+              "score_unclipped": 21.783115638511582,
+              "co2_saved_pct": 18.86858562390844,
+              "cost_saved_pct": 28.583685672585588,
+              "co2_baseline_kg": 19797.544506603524,
+              "co2_participant_kg": 16062.027869943657,
+              "cost_baseline_eur": 41716.224637566665,
+              "cost_participant_eur": 29792.1901126949,
+              "co2_saved_kg": 3735.516636659868,
+              "cost_saved_eur": 11924.034524871764,
+              "violations": 0,
+              "co2_estalviat_pct": 18.86858562390844,
+              "cost_estalviat_pct": 28.583685672585588,
+              "infraccions": 0
+            }
+          ],
+          "config": {
+            "gap_soc": "carry",
+            "initial_soc_kwh": 3000.0,
+            "market_len": 3,
+            "reset_history_every": null,
+            "telemetry_mode": "kit",
+            "terminal_credit": false,
+            "exception_monitoring": true,
+            "strict": true
+          },
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 5999.99990513167,
+          "soc_min_kwh": 0.0001054092551839858,
+          "soc_max_kwh": 5999.99990513167,
+          "soc_reset_energy_kwh": 0.0,
+          "soc_resets": 0,
+          "explicit_history_resets": [],
+          "errors": 0,
+          "error_details": [],
+          "model_status": {
+            "direct": {
+              "trees": 600,
+              "features": 28
+            },
+            "price": {
+              "trees": 500,
+              "features": 44
+            },
+            "co2": {
+              "trees": 500,
+              "features": 44
+            },
+            "q0": {
+              "trees": 142,
+              "features": 28
+            },
+            "q1": {
+              "trees": 122,
+              "features": 28
+            },
+            "q2": {
+              "trees": 81,
+              "features": 28
+            },
+            "q3": {
+              "trees": 106,
+              "features": 28
+            },
+            "q4": {
+              "trees": 374,
+              "features": 28
+            },
+            "q5": {
+              "trees": 155,
+              "features": 28
+            },
+            "q6": {
+              "trees": 76,
+              "features": 28
+            }
+          },
+          "market_loaded": true,
+          "artifact_inventory": {
+            "agent.py": {
+              "bytes": 21812,
+              "sha256": "bc48205936253ab622022e3412de07cced818b4c9a1ede57a97a92e2a41b05a1"
+            },
+            "analog_library.npz": {
+              "bytes": 943648,
+              "sha256": "1338f9bc28f7af335aa9dd45fc48ef4c06af016eebd182470164a3695635e495"
+            },
+            "config.json": {
+              "bytes": 291,
+              "sha256": "b14cc09b9ee24b0ac743cf87a2a93ca0bc14e814b40d0829dd30a5eab6fa2bb0"
+            },
+            "manifest.json": {
+              "bytes": 1199,
+              "sha256": "ad14fd03763ff88aadd3ac087e822ebcbefb18fe17c3d78c18d7c3397fc5ae6c"
+            },
+            "model_co2.txt": {
+              "bytes": 1577426,
+              "sha256": "b860e88e2aaed0bf3f2d1418eac1de4a61eebf48c5469c77814c3cd5fb76817c"
+            },
+            "model_direct.txt": {
+              "bytes": 3320414,
+              "sha256": "28da19176799c75316214cb2a973343b936476057a48ca5dae37bae862f4bebc"
+            },
+            "model_price.txt": {
+              "bytes": 1575032,
+              "sha256": "4575e67ef91299afc2d4af5e79706e3e790b8b2298474e1c521424c75d57e81a"
+            },
+            "net_q0.txt": {
+              "bytes": 353969,
+              "sha256": "dd5a6b5f342a85019f6b8bfb6c5160e2ad25f539b85ebb53aa85d6e2211a4b1d"
+            },
+            "net_q1.txt": {
+              "bytes": 344049,
+              "sha256": "5c4dd67e7027b4599c392344a24a543edede1eb42789f0b5ce408f9991b71e2b"
+            },
+            "net_q2.txt": {
+              "bytes": 231741,
+              "sha256": "f8199e90f03731ea2fed595429ec4035d46934fb56296096be5edcdf64548315"
+            },
+            "net_q3.txt": {
+              "bytes": 301270,
+              "sha256": "99400510b903af93273bd015e7ca97e0e3f699efe3d71ba756fc1d0e2f78f08d"
+            },
+            "net_q4.txt": {
+              "bytes": 1073423,
+              "sha256": "547e347e98fba76f19dcea8711ef889176f6f0273905326bd0a757fe539fed0c"
+            },
+            "net_q5.txt": {
+              "bytes": 444491,
+              "sha256": "32e85f334c36ee123f5583e4a2c0d4d8978c1fcb1cb3116469dd52aa66f2728c"
+            },
+            "net_q6.txt": {
+              "bytes": 191962,
+              "sha256": "d496aeec70c053d6a519ebdfe7292f14a850a0ee36e62e5bc848bd2d23b62257"
+            },
+            "prior.json": {
+              "bytes": 296838,
+              "sha256": "2b513ced2088ccf18cafeeeac5d7f5ae3a21b67608276dee119a3324caf46e37"
+            }
+          },
+          "runtime": {
+            "import_seconds": 0.004487133000111498,
+            "init_seconds": 0.04945504499994513,
+            "act_total_seconds": 1.3084428930004606,
+            "act_mean_ms": 3.894175276787085,
+            "act_max_ms": 31.746312999985093,
+            "total_seconds": 1.4214435380000623
+          },
+          "grid_kwh": 267850.88076759374,
+          "baseline_grid_kwh": 265405.5266666667,
+          "export_kwh": 1464.8427618602077,
+          "hores": 336,
+          "temps_s": 1.4214435380000623,
+          "errors_planificacio": 0,
+          "models_carregats": [
+            "direct",
+            "price",
+            "co2",
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ],
+          "mercat_analog_carregat": true,
+          "fold": "spring",
+          "policy_config": {
+            "market_analog_weight": 0.75,
+            "analog_k": 16,
+            "net_residual_weight": 0,
+            "current_quantiles": true,
+            "residual_scale": 1.0,
+            "residual_source": "clean",
+            "ratio_co2_cost": 0.6345,
+            "horizon": 24,
+            "current_scale": 1.0,
+            "market_shrink": 0.0,
+            "short_market_weight_cap": 0.5
+          }
+        },
+        {
+          "score": 20.149027984452832,
+          "score_unclipped": 20.149027984452832,
+          "co2_saved_pct": 18.028976508523364,
+          "cost_saved_pct": 25.095814761621593,
+          "co2_baseline_kg": 21309.045365732425,
+          "co2_participant_kg": 17467.24258255394,
+          "cost_baseline_eur": 40647.535212300005,
+          "cost_participant_eur": 30446.705070256285,
+          "co2_saved_kg": 3841.8027831784857,
+          "cost_saved_eur": 10200.83014204372,
+          "violations": 0,
+          "co2_estalviat_pct": 18.028976508523364,
+          "cost_estalviat_pct": 25.095814761621593,
+          "infraccions": 0,
+          "label": "hybrid16_guarded",
+          "hours": 336,
+          "start": "2026-06-01 00:00:00",
+          "end": "2026-06-14 23:00:00",
+          "periods": [
+            {
+              "block": 0,
+              "start": "2026-06-01 00:00:00",
+              "end": "2026-06-14 23:00:00",
+              "hours": 336,
+              "soc_initial_kwh": 3000.0,
+              "soc_final_kwh": 5084.196247264275,
+              "score": 20.149027984452832,
+              "score_unclipped": 20.149027984452832,
+              "co2_saved_pct": 18.028976508523364,
+              "cost_saved_pct": 25.095814761621593,
+              "co2_baseline_kg": 21309.045365732425,
+              "co2_participant_kg": 17467.24258255394,
+              "cost_baseline_eur": 40647.535212300005,
+              "cost_participant_eur": 30446.705070256285,
+              "co2_saved_kg": 3841.8027831784857,
+              "cost_saved_eur": 10200.83014204372,
+              "violations": 0,
+              "co2_estalviat_pct": 18.028976508523364,
+              "cost_estalviat_pct": 25.095814761621593,
+              "infraccions": 0
+            }
+          ],
+          "config": {
+            "gap_soc": "carry",
+            "initial_soc_kwh": 3000.0,
+            "market_len": 3,
+            "reset_history_every": null,
+            "telemetry_mode": "kit",
+            "terminal_credit": false,
+            "exception_monitoring": true,
+            "strict": true
+          },
+          "soc_initial_kwh": 3000.0,
+          "soc_final_kwh": 5084.196247264275,
+          "soc_min_kwh": 0.0001054092551839858,
+          "soc_max_kwh": 5999.99990513167,
+          "soc_reset_energy_kwh": 0.0,
+          "soc_resets": 0,
+          "explicit_history_resets": [],
+          "errors": 0,
+          "error_details": [],
+          "model_status": {
+            "direct": {
+              "trees": 600,
+              "features": 28
+            },
+            "price": {
+              "trees": 500,
+              "features": 44
+            },
+            "co2": {
+              "trees": 500,
+              "features": 44
+            },
+            "q0": {
+              "trees": 142,
+              "features": 28
+            },
+            "q1": {
+              "trees": 122,
+              "features": 28
+            },
+            "q2": {
+              "trees": 81,
+              "features": 28
+            },
+            "q3": {
+              "trees": 106,
+              "features": 28
+            },
+            "q4": {
+              "trees": 374,
+              "features": 28
+            },
+            "q5": {
+              "trees": 155,
+              "features": 28
+            },
+            "q6": {
+              "trees": 76,
+              "features": 28
+            }
+          },
+          "market_loaded": true,
+          "artifact_inventory": {
+            "agent.py": {
+              "bytes": 21812,
+              "sha256": "bc48205936253ab622022e3412de07cced818b4c9a1ede57a97a92e2a41b05a1"
+            },
+            "analog_library.npz": {
+              "bytes": 1430634,
+              "sha256": "34032678efe63d9e1ee5bb54f671727f3416f90ba6805bf3c862ddcca8a9df28"
+            },
+            "config.json": {
+              "bytes": 291,
+              "sha256": "b14cc09b9ee24b0ac743cf87a2a93ca0bc14e814b40d0829dd30a5eab6fa2bb0"
+            },
+            "manifest.json": {
+              "bytes": 1199,
+              "sha256": "cb290d102b0bf2f4e0dbb22ff2583ad2c2104946a52a7266351cd029d2568235"
+            },
+            "model_co2.txt": {
+              "bytes": 1579370,
+              "sha256": "ae7419b19520bbd7e89807acd8cfdebd325b189d70f9859e8a82b3c6c875e288"
+            },
+            "model_direct.txt": {
+              "bytes": 3324534,
+              "sha256": "e5d322cc2974a2099da21d5c1d4007d3877eff8b89fd37c7d7fa390209c66911"
+            },
+            "model_price.txt": {
+              "bytes": 1575641,
+              "sha256": "0fc89b5cb19540aebbc05c6b04a1e7bb9664d2be1fa016cd20aba28b715ff951"
+            },
+            "net_q0.txt": {
+              "bytes": 396693,
+              "sha256": "efac86260ff9e851226462527c8f914cfeb5ccd77d239234a4c0ee2c33fdd43c"
+            },
+            "net_q1.txt": {
+              "bytes": 350254,
+              "sha256": "394040f08ea711a879038e766336575ddf345574510077aa71f97704e40d7188"
+            },
+            "net_q2.txt": {
+              "bytes": 233083,
+              "sha256": "2f5d045439351832130da3b7a2c53ee7a8b473a8ff97a8901f6c63a51b22a5d4"
+            },
+            "net_q3.txt": {
+              "bytes": 304148,
+              "sha256": "fc0d6b33471a3ba8fb10d07729467511cca5db615690b28585cb53cec640676c"
+            },
+            "net_q4.txt": {
+              "bytes": 1077155,
+              "sha256": "4c63244805fdac10c0edac9bbdf23416ad578ff338508833d6ddf39bcac463bf"
+            },
+            "net_q5.txt": {
+              "bytes": 448082,
+              "sha256": "38bdc86e10f6834ae634ca25c8da92d6748ad88f68ab84b8da831e8ef5bc90da"
+            },
+            "net_q6.txt": {
+              "bytes": 219464,
+              "sha256": "2f173906e013b6416f69ef7ed62ac3b000fb8b82b909e763db61fc5b09ac6599"
+            },
+            "prior.json": {
+              "bytes": 318186,
+              "sha256": "1edfb779f6035f6e09256e59f558f95847987a53c4fdaf06a013ffbdf71a3ba2"
+            }
+          },
+          "runtime": {
+            "import_seconds": 0.004670203000046058,
+            "init_seconds": 0.042495948000009776,
+            "act_total_seconds": 1.2354493579998689,
+            "act_mean_ms": 3.6769326130948476,
+            "act_max_ms": 7.877277000034155,
+            "total_seconds": 1.3373764320000419
+          },
+          "grid_kwh": 298661.81265165174,
+          "baseline_grid_kwh": 299509.58,
+          "export_kwh": 723.6493223756509,
+          "hores": 336,
+          "temps_s": 1.3373764320000419,
+          "errors_planificacio": 0,
+          "models_carregats": [
+            "direct",
+            "price",
+            "co2",
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ],
+          "mercat_analog_carregat": true,
+          "fold": "summer",
+          "policy_config": {
+            "market_analog_weight": 0.75,
+            "analog_k": 16,
+            "net_residual_weight": 0,
+            "current_quantiles": true,
+            "residual_scale": 1.0,
+            "residual_source": "clean",
+            "ratio_co2_cost": 0.6345,
+            "horizon": 24,
+            "current_scale": 1.0,
+            "market_shrink": 0.0,
+            "short_market_weight_cap": 0.5
+          }
+        }
+      ],
+      "provenance": {
+        "scripts": {
+          "build_agent.py": "00434935b1b85eabc452ff2f2046f6380fb6526160ca14f6c51abc739577cdc8",
+          "evaluate.py": "5cf5d99e83d2dc3c3b3a6077afbf19a321d9db28468376a7e82ecb772048f335",
+          "experiments.py": "9bc2801f5354f46bddf0c100d0c4e9f61c00dd6f8d17c6c5bdadb2576b072f14"
+        },
+        "bundles": {
+          "winter": "5188412b1e4a71f8c58d1e769d5f59638a2ddd8088a0dc7825740e05c811aa05",
+          "spring": "6ca4e7982e8ed89ae69438fd1ca121742258ece3bdedd8e001d9c71e4bebd616",
+          "summer": "a5a038a8cf1e04167d0ac7d05bc755a3b53a2e297b615a8463ff86286f1d559b"
+        },
+        "options": {
+          "audit_exceptions": true
+        },
+        "folds": [
+          {
+            "name": "winter",
+            "start": "2025-12-08",
+            "end": "2025-12-22"
+          },
+          {
+            "name": "spring",
+            "start": "2026-03-09",
+            "end": "2026-03-23"
+          },
+          {
+            "name": "summer",
+            "start": "2026-06-01",
+            "end": "2026-06-15"
+          }
+        ],
+        "source_fingerprint": {
+          "co2_red.csv": "d9516aa7d13e80852eadcb5d4884c53e06b275a4bba538ee2c649a3c417b9044",
+          "contador.csv": "b1c439d469d7181578cff5f0d6a652e1bf254067b722c712aa0ee53b7571e9da",
+          "entradas_salidas.csv": "d2fa371b447b1b954d13845eb3058119b35f71f3fa106ca3d2d6414b170632e9",
+          "inversor.csv": "35a666b19495bc929767791dd7c973f085d7c83d0c31d6dc7d59bd9d733ccca9",
+          "meteo.csv": "4aa30b5fa09abeb7eea488581c4908b43118c210f5b7f9dd5f58bcc038d7a829",
+          "precio_pvpc.csv": "2c9af32760c88efdfe31293865ae7c62be30af35c49a23fcf679c6f8879187e0",
+          "loader": "f38c7b21d684bc2159336204418479ab877918d073064d4937f5583321bdbbc0",
+          "hard_loader": "0378d9f21f3ef9d35714d3d5c66c4f3e91e813024881144a0f048924e85ddac5"
+        }
+      }
+    }
+  }
+}

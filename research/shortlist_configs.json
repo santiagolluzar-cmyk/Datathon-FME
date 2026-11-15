@@ -1,0 +1,86 @@
+{
+  "lgb_direct_empirical": {
+    "market_analog_weight": 0,
+    "analog_k": 4,
+    "net_residual_weight": 0,
+    "current_quantiles": false,
+    "residual_scale": 1.0,
+    "residual_source": "clean",
+    "ratio_co2_cost": 0.6345,
+    "horizon": 24,
+    "current_scale": 1.0,
+    "market_shrink": 0.0
+  },
+  "analog_residual_quantiles": {
+    "market_analog_weight": 1,
+    "analog_k": 4,
+    "net_residual_weight": 1,
+    "current_quantiles": true,
+    "residual_scale": 1.0,
+    "residual_source": "clean",
+    "ratio_co2_cost": 0.6345,
+    "horizon": 24,
+    "current_scale": 1.0,
+    "market_shrink": 0.0
+  },
+  "lgb_direct_quantiles": {
+    "market_analog_weight": 0,
+    "analog_k": 4,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "residual_scale": 1.0,
+    "residual_source": "clean",
+    "ratio_co2_cost": 0.6345,
+    "horizon": 24,
+    "current_scale": 1.0,
+    "market_shrink": 0.0
+  },
+  "blend_market_0.5": {
+    "market_analog_weight": 0.5,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "residual_scale": 1.0,
+    "residual_source": "clean",
+    "ratio_co2_cost": 0.6345,
+    "horizon": 24,
+    "current_scale": 1.0,
+    "market_shrink": 0.0
+  },
+  "market75_k16": {
+    "market_analog_weight": 0.75,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "residual_scale": 1.0,
+    "residual_source": "clean",
+    "ratio_co2_cost": 0.6345,
+    "horizon": 24,
+    "current_scale": 1.0,
+    "market_shrink": 0.0
+  },
+  "market50_h18": {
+    "market_analog_weight": 0.5,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "residual_scale": 1.0,
+    "residual_source": "clean",
+    "ratio_co2_cost": 0.6345,
+    "horizon": 18,
+    "current_scale": 1.0,
+    "market_shrink": 0.0
+  },
+  "analog16_direct_quantiles": {
+    "market_analog_weight": 1,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "residual_scale": 1.0,
+    "residual_source": "clean",
+    "ratio_co2_cost": 0.6345,
+    "horizon": 24,
+    "current_scale": 1.0,
+    "market_shrink": 0.0
+  }
+}

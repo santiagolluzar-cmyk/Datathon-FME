@@ -1,0 +1,367 @@
+{
+  "hours": 5993,
+  "start": "2025-09-01 00:00:00",
+  "end": "2026-08-16 22:00:00",
+  "missing_joined_values": {
+    "Fecha": 0,
+    "load_kw": 0,
+    "pv_kw": 0,
+    "precio_eur_per_kwh": 0,
+    "co2_kg_per_kwh": 0,
+    "tamb": 0,
+    "tpan": 0,
+    "wind": 0,
+    "irr": 0,
+    "base_grid": 0,
+    "cost": 0,
+    "carbon": 0,
+    "surplus": 0,
+    "surplus_h": 0
+  },
+  "monthly": {
+    "2025-09": {
+      "hours": 552,
+      "mean_load_kw": 1153.9903381642512,
+      "mean_scaled_pv_kw": 315.91840579710146,
+      "cost_base_eur": 69143.7692437,
+      "co2_base_kg": 44156.46565382564,
+      "surplus_kwh": 6392.326666666667,
+      "surplus_hours": 20
+    },
+    "2025-10": {
+      "hours": 576,
+      "mean_load_kw": 1139.7473958333333,
+      "mean_scaled_pv_kw": 258.52385416666664,
+      "cost_base_eur": 80746.23709873333,
+      "co2_base_kg": 63304.04402976908,
+      "surplus_kwh": 7054.57,
+      "surplus_hours": 26
+    },
+    "2025-12": {
+      "hours": 576,
+      "mean_load_kw": 1096.918113425926,
+      "mean_scaled_pv_kw": 127.93335069444444,
+      "cost_base_eur": 86747.24424959999,
+      "co2_base_kg": 60589.520339028335,
+      "surplus_kwh": 1497.5833333333333,
+      "surplus_hours": 11
+    },
+    "2026-01": {
+      "hours": 576,
+      "mean_load_kw": 1081.5873842592594,
+      "mean_scaled_pv_kw": 137.529375,
+      "cost_base_eur": 83318.79252826665,
+      "co2_base_kg": 49062.57890477371,
+      "surplus_kwh": 2441.103333333333,
+      "surplus_hours": 13
+    },
+    "2026-02": {
+      "hours": 504,
+      "mean_load_kw": 1090.0089285714287,
+      "mean_scaled_pv_kw": 228.61845238095236,
+      "cost_base_eur": 52897.97878119999,
+      "co2_base_kg": 23045.126182833086,
+      "surplus_kwh": 12663.64,
+      "surplus_hours": 33
+    },
+    "2026-03": {
+      "hours": 576,
+      "mean_load_kw": 1081.7216435185185,
+      "mean_scaled_pv_kw": 289.66991319444446,
+      "cost_base_eur": 73955.68665996667,
+      "co2_base_kg": 34710.53469862763,
+      "surplus_kwh": 17374.123333333333,
+      "surplus_hours": 48
+    },
+    "2026-04": {
+      "hours": 552,
+      "mean_load_kw": 998.937198067633,
+      "mean_scaled_pv_kw": 432.9738949275362,
+      "cost_base_eur": 48764.86911913333,
+      "co2_base_kg": 27548.351051169906,
+      "surplus_kwh": 41026.30333333334,
+      "surplus_hours": 119
+    },
+    "2026-05": {
+      "hours": 576,
+      "mean_load_kw": 1030.173611111111,
+      "mean_scaled_pv_kw": 414.2365104166667,
+      "cost_base_eur": 55108.18984646666,
+      "co2_base_kg": 33850.17229777019,
+      "surplus_kwh": 35005.00666666667,
+      "surplus_hours": 90
+    },
+    "2026-06": {
+      "hours": 550,
+      "mean_load_kw": 1290.7456198347109,
+      "mean_scaled_pv_kw": 465.72302479338845,
+      "cost_base_eur": 68693.2221921303,
+      "co2_base_kg": 39190.971175639155,
+      "surplus_kwh": 22098.893333333333,
+      "surplus_hours": 45
+    },
+    "2026-07": {
+      "hours": 576,
+      "mean_load_kw": 1449.2481192129628,
+      "mean_scaled_pv_kw": 455.34378472222227,
+      "cost_base_eur": 105949.29839596666,
+      "co2_base_kg": 63382.549969744236,
+      "surplus_kwh": 16545.733333333334,
+      "surplus_hours": 43
+    },
+    "2026-08": {
+      "hours": 379,
+      "mean_load_kw": 837.6444591029024,
+      "mean_scaled_pv_kw": 400.4255145118733,
+      "cost_base_eur": 41162.3119334,
+      "co2_base_kg": 29189.223029021545,
+      "surplus_kwh": 32032.940000000002,
+      "surplus_hours": 93
+    }
+  },
+  "continuous_blocks": [
+    {
+      "start": "2025-09-01 00:00:00",
+      "end": "2025-09-23 23:00:00",
+      "hours": 552
+    },
+    {
+      "start": "2025-10-01 00:00:00",
+      "end": "2025-10-24 23:00:00",
+      "hours": 576
+    },
+    {
+      "start": "2025-12-01 00:00:00",
+      "end": "2025-12-24 23:00:00",
+      "hours": 576
+    },
+    {
+      "start": "2026-01-01 00:00:00",
+      "end": "2026-01-24 23:00:00",
+      "hours": 576
+    },
+    {
+      "start": "2026-02-01 00:00:00",
+      "end": "2026-02-21 23:00:00",
+      "hours": 504
+    },
+    {
+      "start": "2026-03-01 00:00:00",
+      "end": "2026-03-24 23:00:00",
+      "hours": 576
+    },
+    {
+      "start": "2026-04-01 00:00:00",
+      "end": "2026-04-23 23:00:00",
+      "hours": 552
+    },
+    {
+      "start": "2026-05-01 00:00:00",
+      "end": "2026-05-24 23:00:00",
+      "hours": 576
+    },
+    {
+      "start": "2026-06-01 00:00:00",
+      "end": "2026-06-17 14:00:00",
+      "hours": 399
+    },
+    {
+      "start": "2026-06-17 17:00:00",
+      "end": "2026-06-23 23:00:00",
+      "hours": 151
+    },
+    {
+      "start": "2026-07-01 00:00:00",
+      "end": "2026-07-24 23:00:00",
+      "hours": 576
+    },
+    {
+      "start": "2026-08-01 00:00:00",
+      "end": "2026-08-04 07:00:00",
+      "hours": 80
+    },
+    {
+      "start": "2026-08-04 12:00:00",
+      "end": "2026-08-16 22:00:00",
+      "hours": 299
+    }
+  ],
+  "historical_week_validation_hours": 1680,
+  "legacy_1008_suite_start": "2025-09-15 00:00:00",
+  "legacy_1008_suite_end": "2026-03-22 23:00:00",
+  "raw_sources": {
+    "co2_red.csv": {
+      "rows": 6768,
+      "columns": 5,
+      "start": "2025-09-01 00:00:00",
+      "end": "2026-09-01 23:00:00",
+      "duplicate_timestamps": 0,
+      "null_cells": 0,
+      "all_null_columns": [],
+      "time_deltas": {
+        "0 days 01:00:00": 6755,
+        "7 days 01:00:00": 12
+      }
+    },
+    "contador.csv": {
+      "rows": 74210,
+      "columns": 29,
+      "start": "2025-09-01 00:05:00",
+      "end": "2026-09-01 00:00:00",
+      "duplicate_timestamps": 0,
+      "null_cells": 75438,
+      "all_null_columns": [
+        "Meter 1 - ULTIMA FECHA CURVA DE CARGA"
+      ],
+      "time_deltas": {
+        "0 days 00:05:00": 74195,
+        "7 days 00:05:00": 11,
+        "30 days 00:00:00": 1,
+        "0 days 02:30:00": 1,
+        "0 days 05:35:00": 1
+      }
+    },
+    "entradas_salidas.csv": {
+      "rows": 74210,
+      "columns": 20,
+      "start": "2025-09-01 00:05:00",
+      "end": "2026-09-01 00:00:00",
+      "duplicate_timestamps": 0,
+      "null_cells": 734261,
+      "all_null_columns": [
+        "IoLogik 1214 - MARCA.1",
+        "IoLogik 1214 - MODELO.1",
+        "IoLogik 1214 - ESTADO COM.1",
+        "IoLogik 1214 - CALIDAD COM.1",
+        "IoLogik 1214 - NUMERO DE PREGUNTAS.1",
+        "IoLogik 1214 - NUMERO DE FALLOS.1",
+        "IoLogik 1214 - FECHA ULTIMA LECTURA.1",
+        "IoLogik 1214 - DURACION ULTIMO MUESTREO (s).1",
+        "IoLogik 1214 - SALIDA RELE 0.1"
+      ],
+      "time_deltas": {
+        "0 days 00:05:00": 74195,
+        "7 days 00:05:00": 11,
+        "30 days 00:00:00": 1,
+        "0 days 02:30:00": 1,
+        "0 days 05:35:00": 1
+      }
+    },
+    "inversor.csv": {
+      "rows": 71882,
+      "columns": 176,
+      "start": "2025-09-01 00:05:00",
+      "end": "2026-08-16 22:00:00",
+      "duplicate_timestamps": 0,
+      "null_cells": 216037,
+      "all_null_columns": [],
+      "time_deltas": {
+        "0 days 00:05:00": 71868,
+        "7 days 00:05:00": 10,
+        "30 days 00:00:00": 1,
+        "0 days 02:30:00": 1,
+        "0 days 05:35:00": 1
+      }
+    },
+    "meteo.csv": {
+      "rows": 74210,
+      "columns": 20,
+      "start": "2025-09-01 00:05:00",
+      "end": "2026-09-01 00:00:00",
+      "duplicate_timestamps": 0,
+      "null_cells": 74259,
+      "all_null_columns": [
+        "Atersa - NUMERO DE FALLOS"
+      ],
+      "time_deltas": {
+        "0 days 00:05:00": 74195,
+        "7 days 00:05:00": 11,
+        "30 days 00:00:00": 1,
+        "0 days 02:30:00": 1,
+        "0 days 05:35:00": 1
+      }
+    },
+    "precio_pvpc.csv": {
+      "rows": 6768,
+      "columns": 3,
+      "start": "2025-09-01 00:00:00",
+      "end": "2026-09-01 23:00:00",
+      "duplicate_timestamps": 0,
+      "null_cells": 0,
+      "all_null_columns": [],
+      "time_deltas": {
+        "0 days 01:00:00": 6755,
+        "7 days 01:00:00": 12
+      }
+    }
+  },
+  "pv_samples_per_nonempty_hour": {
+    "1": 2,
+    "4": 1,
+    "7": 1,
+    "11": 2,
+    "12": 5987
+  },
+  "tutorial_pv_differences": {
+    "2025-11-01 00:00:00": {
+      "strict_pv_kw": null,
+      "tutorial_pv_kw": 0.0
+    },
+    "2026-06-17 14:00:00": {
+      "strict_pv_kw": 124.18363636363637,
+      "tutorial_pv_kw": 113.835
+    }
+  },
+  "numeric_ranges": {
+    "load_kw": {
+      "min": 0.0,
+      "max": 2503.0833333333335
+    },
+    "pv_kw": {
+      "min": 0.0,
+      "max": 1728.77
+    },
+    "precio_eur_per_kwh": {
+      "min": 0.00327,
+      "max": 0.39858
+    },
+    "co2_kg_per_kwh": {
+      "min": 0.0278787209056754,
+      "max": 0.2217432994288789
+    },
+    "tamb": {
+      "min": 0.43333333333333335,
+      "max": 54.26666666666667
+    },
+    "tpan": {
+      "min": -1.3416666666666668,
+      "max": 70.81666666666666
+    },
+    "irr": {
+      "min": 0.0,
+      "max": 1058.5833333333333
+    },
+    "wind": {
+      "min": 0.0,
+      "max": 0.0
+    }
+  },
+  "physical_smoke_check": {
+    "initial_telemetry_current_row": true,
+    "soc_persists_across_gap": true,
+    "final_soc_kwh": 2894.5907446610536,
+    "expected_soc_kwh": 2894.5907446610536,
+    "metrics": {
+      "score": 33.33,
+      "co2_estalviat_pct": 33.33,
+      "cost_estalviat_pct": 33.33,
+      "co2_estalviat_kg": 50.0,
+      "cost_estalviat_eur": 100.0,
+      "co2_participant_kg": 100.0,
+      "cost_participant_eur": 200.0,
+      "co2_baseline_kg": 150.0,
+      "cost_baseline_eur": 300.0,
+      "infraccions": 0
+    }
+  }
+}

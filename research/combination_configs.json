@@ -1,0 +1,47 @@
+{
+  "analog16_direct_quantiles": {
+    "market_analog_weight": 1,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true
+  },
+  "market50_k4": {
+    "market_analog_weight": 0.5,
+    "analog_k": 4,
+    "net_residual_weight": 0,
+    "current_quantiles": true
+  },
+  "market75_k16": {
+    "market_analog_weight": 0.75,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true
+  },
+  "market50_h12": {
+    "market_analog_weight": 0.5,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "horizon": 12
+  },
+  "market50_h18": {
+    "market_analog_weight": 0.5,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "horizon": 18
+  },
+  "market50_net25": {
+    "market_analog_weight": 0.5,
+    "analog_k": 16,
+    "net_residual_weight": 0.25,
+    "current_quantiles": true
+  },
+  "market50_current130": {
+    "market_analog_weight": 0.5,
+    "analog_k": 16,
+    "net_residual_weight": 0,
+    "current_quantiles": true,
+    "current_scale": 1.3
+  }
+}

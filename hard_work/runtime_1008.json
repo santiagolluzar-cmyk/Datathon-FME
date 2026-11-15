@@ -1,0 +1,27 @@
+{
+  "score": 14.8,
+  "co2_estalviat_pct": 13.69,
+  "cost_estalviat_pct": 17.38,
+  "co2_estalviat_kg": 13437.7,
+  "cost_estalviat_eur": 24535.26,
+  "co2_participant_kg": 84729.0,
+  "cost_participant_eur": 116661.25,
+  "co2_baseline_kg": 98166.7,
+  "cost_baseline_eur": 141196.51,
+  "infraccions": 0,
+  "hores": 1008,
+  "temps_s": 1.985149500000034,
+  "soc_final_kwh": 5768.604641208144,
+  "errors_planificacio": 0,
+  "models_carregats": [
+    "net",
+    "q0",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q6"
+  ],
+  "mercat_analog_carregat": true
+}

@@ -1,0 +1,49 @@
+{
+  "reviewed_files_sha256": {
+    "train_clean.py": "17c896aa263ebecad615f14d1556b097f2af7d9d70e196b5040b8d73ad114416",
+    "build_agent.py": "00434935b1b85eabc452ff2f2046f6380fb6526160ca14f6c51abc739577cdc8",
+    "evaluate.py": "5cf5d99e83d2dc3c3b3a6077afbf19a321d9db28468376a7e82ecb772048f335",
+    "experiments.py": "9bc2801f5354f46bddf0c100d0c4e9f61c00dd6f8d17c6c5bdadb2576b072f14",
+    "split_manifest.json": "7c31d4d4ed6df79d80a6d67e1a23e7accee97b8737fcf761d1561fbf226e9b56"
+  },
+  "candidate": "market75_k16",
+  "checked_no_final_policy_evaluation": true,
+  "findings": [
+    {
+      "severity": "correctness",
+      "file": "split_manifest.json",
+      "finding": "locked_final.end is inclusive last timestamp whereas evaluator selects end exclusive; 1007 instead of1008 rows if reused generically."
+    },
+    {
+      "severity": "configuration",
+      "file": "build_agent.py",
+      "finding": "terminal_value config is never used; current0 is harmless, nonzero would be misleading."
+    },
+    {
+      "severity": "reproducibility",
+      "file": "experiments.py",
+      "finding": "Resume matches only config name, not config/source/model fingerprint; stale reuse possible."
+    },
+    {
+      "severity": "reproducibility",
+      "file": "evaluate.py",
+      "finding": "Dataset cache fingerprint omits eval_dificil.py although actual loader is imported from it."
+    },
+    {
+      "severity": "interpretation",
+      "file": "train_clean.py",
+      "finding": "Fixed quantile iteration counts are inherited from historically exposed July validation, overlapping newly locked final. New final is not historically untouched."
+    }
+  ],
+  "passed": [
+    "Train-only profiles and split memory resets",
+    "Full24h train target purging and analog purging",
+    "Separate inner residual calibration models/profiles",
+    "Current candidate config implementation matches intended weights",
+    "Candidate AST restrictions pass for all3folds",
+    "Fold model hashes match recorded metadata",
+    "All fold training/calibration dates precede respective evaluation start",
+    "MPC keeps finite nonnegative predicted marginal weights on observed evaluated inputs"
+  ],
+  "packaging": "Only before-final trained ZIP owns its future heldout estimate. Alltrain refit uses same fixed recipe but new fitted artifacts, analog pool, profile tables, and calendar-position calibration weeks."
+}
