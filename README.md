@@ -1,3 +1,19 @@
+# Datathon FME 2026 — Riviera Maya Boys
+
+> ## Lliurament final (Mode Difícil): [`lliurament_final/`](lliurament_final/)
+>
+> | | Solució | Score públic |
+> |---|---|---|
+> | **Versió 1** | [`lliurament_final/versio_1_public_27.36/`](lliurament_final/versio_1_public_27.36/) | **27,36** (2n) |
+> | **Versió 2** | [`lliurament_final/versio_2_privat_13.33/`](lliurament_final/versio_2_privat_13.33/) | 13,33 (pensada per al rànquing privat) |
+>
+> Són les dues solucions seleccionades per al jurat. El README de la carpeta explica l'agent, per què hi ha
+> dues versions i l'historial de la resta d'enviaments.
+>
+> Mode estàndard: [`agent.py`](agent.py) a l'arrel (6,43 punts).
+
+---
+
 # Repte UPC Sostenible: Optimització de la Bateria del Campus
 ## Datathon 2026 — Transició Energètica i Descarbonització
 

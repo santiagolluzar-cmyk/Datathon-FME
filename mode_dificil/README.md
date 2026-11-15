@@ -1,5 +1,8 @@
 # Agent del mode dificil
 
+> Historial. El lliurament final és a [`../lliurament_final/`](../lliurament_final/).
+> El `submission.zip` d'aquesta carpeta és el prototip de 23,11 punts.
+
 Paquet llest per a un lliurament manual: `submission.zip` (agent, perfils, biblioteca
 de trajectories historiques i vuit models de demanda). El fitxer `agent.py` necessita
 els fitxers auxiliars del mateix directori.
