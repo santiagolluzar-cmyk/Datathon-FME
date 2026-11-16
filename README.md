@@ -9,6 +9,10 @@ dynamic-programming optimiser (0 infractions, ~18 s for the whole test). Our key
 only scored the first half of each test week and the private one the second half, so we submitted two mirrored
 strategies — one maximising the public ranking (27.36, 2nd) and one built for the private ranking.*
 
+![Final ranking, Hard Mode: Riviera Maya Boys 2nd with 25.46 points](lliurament_final/classificacio_final.png)
+
+*Final ranking (Hard Mode): Riviera Maya Boys, 2nd place with 25.46 points and 0 infractions — our local simulation of the private half predicted 26.9.*
+
 Final submissions: [`lliurament_final/`](lliurament_final/). Context: this repository started from the organisers'
 starter kit and was developed by a team of three during the 24-hour datathon.
 

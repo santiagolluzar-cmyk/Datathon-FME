@@ -12,6 +12,8 @@ Empremtes SHA-256 dels paquets enviats:
 - Versió 1: `ff74a035809a2b7e…`
 - Versió 2: `8ccd6dc093f85f26…`
 
+**Resultat final oficial (Mode Difícil): 2n lloc amb 25,46 punts** — vegeu [`classificacio_final.png`](classificacio_final.png). La simulació local del privat preveia 26,9.
+
 ## Per què dues versions tan diferents
 
 Les dues comparteixen el mateix agent. Només canvia **com acaba cada setmana de test la bateria**.
