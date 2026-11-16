@@ -1,5 +1,19 @@
 # Datathon FME 2026 — Riviera Maya Boys
 
+**2nd place — UPC Sostenible challenge: "Battery Optimisation for the Campus" (Datathon FME 2026, UPC).**
+
+*A control agent for a campus battery (6,000 kWh / ±1,500 kW, 12x solar, only 3 h of known prices) that decides every
+hour whether to charge or discharge, minimising CO2 (70 %) and electricity cost (30 %). The solution combines
+horizon-specialised LightGBM forecasts of market prices and campus demand, scenario-based uncertainty, and an exact
+dynamic-programming optimiser (0 infractions, ~18 s for the whole test). Our key insight: the public leaderboard
+only scored the first half of each test week and the private one the second half, so we submitted two mirrored
+strategies — one maximising the public ranking (27.36, 2nd) and one built for the private ranking.*
+
+Final submissions: [`lliurament_final/`](lliurament_final/). Context: this repository started from the organisers'
+starter kit and was developed by a team of three during the 24-hour datathon.
+
+---
+
 > ## Lliurament final (Mode Difícil): [`lliurament_final/`](lliurament_final/)
 >
 > | | Solució | Score públic |
